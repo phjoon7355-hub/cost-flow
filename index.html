@@ -8,7 +8,7 @@
   <style>
     :root{--ink:#172525;--sub:#687674;--paper:#fffefa;--bg:#edf0e9;--line:#d9ddd4;--deep:#123d39;--green:#1f655b;--mint:#e4f1ed;--orange:#db6b4f;--gold:#e6ae48;--red:#b84f42;--redbg:#fbe9e5;--blue:#305f87;--shadow:0 18px 50px rgba(18,61,57,.12)}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 95% 0,rgba(219,107,79,.13),transparent 28rem),linear-gradient(180deg,#e8ece4,#f5f4ef 36rem,#eef0ea);font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.6}button,input,select{font:inherit}
-    .app{width:min(1180px,calc(100% - 28px));margin:auto;padding:24px 0 70px}.top{position:relative;overflow:hidden;padding:38px clamp(24px,5vw,58px);color:#fff;border-radius:26px;background:linear-gradient(130deg,var(--deep),#0c2d2a);box-shadow:var(--shadow)}.top:after{content:"✓";position:absolute;right:36px;bottom:-73px;color:rgba(255,255,255,.06);font:700 14rem Georgia,serif}.eyebrow{margin:0 0 8px;color:#f2c26c;font-size:.76rem;font-weight:900;letter-spacing:.17em}.top h1{margin:0;font:700 clamp(2.1rem,5vw,4.1rem)/1.08 Georgia,"Noto Serif KR",serif;letter-spacing:-.04em}.top p:not(.eyebrow){max-width:690px;margin:17px 0 0;color:#d6e5e2}.save-state{display:inline-flex;align-items:center;gap:7px;margin-top:19px;padding:6px 11px;border:1px solid rgba(255,255,255,.18);border-radius:99px;background:rgba(255,255,255,.07);font-size:.78rem}.dot{width:7px;height:7px;border-radius:50%;background:#7ed5ad;box-shadow:0 0 0 4px rgba(126,213,173,.13)}
+    .app{width:min(1180px,calc(100% - 28px));margin:auto;padding:24px 0 70px}.top{position:relative;overflow:hidden;padding:38px clamp(24px,5vw,58px);color:#fff;border-radius:26px;background:linear-gradient(130deg,var(--deep),#0c2d2a);box-shadow:var(--shadow)}.top:after{content:"✓";position:absolute;right:36px;bottom:-73px;color:rgba(255,255,255,.06);font:700 14rem Georgia,serif}.eyebrow{margin:0 0 8px;color:#f2c26c;font-size:.76rem;font-weight:900;letter-spacing:.17em}.top h1{margin:0;font:700 clamp(2.1rem,5vw,4.1rem)/1.08 Georgia,"Noto Serif KR",serif;letter-spacing:-.04em}.top p:not(.eyebrow){max-width:690px;margin:17px 0 0;color:#d6e5e2}.save-state{display:inline-flex;align-items:center;gap:7px;margin:19px 7px 0 0;padding:6px 11px;border:1px solid rgba(255,255,255,.18);border-radius:99px;background:rgba(255,255,255,.07);font-size:.78rem}.dot{width:7px;height:7px;border-radius:50%;background:#7ed5ad;box-shadow:0 0 0 4px rgba(126,213,173,.13)}.dot.syncing{background:#f2c26c;box-shadow:0 0 0 4px rgba(242,194,108,.13)}.dot.error{background:#ff8f7e;box-shadow:0 0 0 4px rgba(255,143,126,.13)}
     .nav{position:sticky;z-index:20;top:8px;display:flex;gap:7px;margin:18px 0;padding:8px;border:1px solid var(--line);border-radius:16px;background:rgba(255,254,250,.92);box-shadow:0 8px 28px rgba(28,51,48,.08);backdrop-filter:blur(12px)}.nav button{flex:1;padding:10px 12px;border:0;border-radius:10px;color:var(--sub);background:transparent;font-weight:850;cursor:pointer}.nav button.active{color:#fff;background:var(--deep)}.view{display:none}.view.active{display:block}
     .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.stat{padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--paper)}.stat span{display:block;color:var(--sub);font-size:.79rem}.stat strong{display:block;margin-top:5px;color:var(--deep);font:700 2rem Georgia,serif}.stat small{color:var(--sub)}
     .panel{margin-top:15px;padding:clamp(20px,4vw,34px);border:1px solid var(--line);border-radius:21px;background:var(--paper);box-shadow:0 8px 30px rgba(26,48,45,.045)}.panel h2{margin:0 0 6px;font-size:1.22rem}.panel>.desc{margin:0 0 20px;color:var(--sub);font-size:.9rem}.section-title{display:flex;justify-content:space-between;align-items:end;gap:12px}.pill{padding:4px 9px;color:var(--deep);border-radius:99px;background:var(--mint);font-size:.74rem;font-weight:800}
@@ -28,6 +28,7 @@
     <h1>회계원리 학습센터</h1>
     <p>틀린 문제를 잊지 않고 쌓아 두고, 다시 풀고, 같은 개념의 새로운 응용문제로 익히는 개인 학습 공간입니다.</p>
     <span class="save-state"><i class="dot"></i> 이 브라우저에 자동 저장 중</span>
+    <span class="save-state" id="packSyncStatus"><i class="dot syncing"></i> 온라인 문제팩 확인 중</span>
   </header>
 
   <nav class="nav" aria-label="주요 메뉴">
@@ -123,13 +124,14 @@
       <div class="warning">브라우저 기록을 삭제하면 내부 저장소도 지워질 수 있습니다. 단원이 끝날 때마다 한글 이름으로 JSON 백업을 저장해 두세요.</div>
     </div>
   </section>
-  <p class="footer">회계원리 학습센터 v1.1 · 모든 데이터는 사용자의 브라우저와 사용자가 저장한 JSON 파일에만 보관됩니다.</p>
+  <p class="footer">회계원리 학습센터 v1.2 · 문제팩은 GitHub에서 자동 동기화되며, 학습기록은 이 브라우저와 JSON 백업에 보관됩니다.</p>
 </main>
 
 <script>
 "use strict";
 const APP_KEY="accountingStudyCenter_v1";
-const APP_VERSION="1.1";
+const APP_VERSION="1.2";
+const REMOTE_MANIFEST="problem-packs/manifest.json";
 const baseQuestions=[
  {id:"BASIC-001",chapter:"기초이론",number:1,type:"회계의 기본가정",concept:"기간별보고",q:"12월 31일 결산법인이 아직 사용하지 않은 보험료를 선급비용으로 조정하였다. 이러한 기말결산정리가 필요한 가장 직접적인 근거는?",o:["기업실체의 가정","기간별보고의 가정","화폐단위의 가정","기업소유주의 가정"],a:1,e:"계속되는 기업활동을 일정한 기간으로 나누어 보고하기 때문에 각 기간에 귀속될 수익과 비용을 결산 때 조정합니다."},
  {id:"BASIC-002",chapter:"기초이론",number:2,type:"회계의 기본가정",concept:"기업실체",q:"개인기업의 대표가 가족여행 비용을 사업용 카드로 결제했다. 회계담당자가 이를 대표자 인출금으로 처리한 근거가 되는 가정은?",o:["계속기업의 가정","기간별보고의 가정","기업실체의 가정","발생주의 가정"],a:2,e:"회계상 기업과 소유주는 별개의 실체이므로 소유주의 사적 지출은 기업의 비용이 아닙니다."},
@@ -185,6 +187,37 @@ function rebuildProgress(){
  const rebuilt={};
  [...state.attempts].sort((a,b)=>String(a.at).localeCompare(String(b.at))).forEach(a=>{const p=rebuilt[a.questionId]||{attempts:0,correct:0,wrong:0,streak:0,last:null,manual:false};p.attempts++;if(a.correct){p.correct++;p.streak++}else{p.wrong++;p.streak=0}p.last=a.at;p.manual=p.manual||!!a.manual;rebuilt[a.questionId]=p});
  state.progress=rebuilt
+}
+function validatePack(obj){
+ if(obj.format!=="회계원리 학습센터 문제팩"||!Array.isArray(obj.questions))throw new Error("학습센터 문제팩 형식이 아닙니다.");
+ const incoming=[...obj.questions,...(obj.variants||[])],ids=new Set([...state.questions,...obj.questions].map(q=>q.id));
+ incoming.forEach(q=>{if(!q.id||!q.chapter||!q.type||!q.concept||!q.q||!Array.isArray(q.o)||q.o.length!==4||!Number.isInteger(q.a)||q.a<0||q.a>3||!q.e)throw new Error(`문제 ${q.id||"(ID 없음)"}의 형식이 올바르지 않습니다.`)});
+ (obj.variants||[]).forEach(v=>{if(!v.parentId||!ids.has(v.parentId))throw new Error(`변형문제 ${v.id}의 원본 문제를 찾을 수 없습니다.`)});
+ return obj
+}
+function mergePack(obj){
+ validatePack(obj);
+ state.questions=[...new Map([...state.questions,...obj.questions].map(q=>[q.id,q])).values()];
+ state.variants=[...new Map([...state.variants,...(obj.variants||[])].map(q=>[q.id,q])).values()]
+}
+function setSyncStatus(message,status="ok"){
+ const el=document.getElementById("packSyncStatus"),dot=el.querySelector(".dot");el.lastChild.textContent=" "+message;dot.className="dot"+(status==="syncing"?" syncing":status==="error"?" error":"")
+}
+async function syncRemotePacks(){
+ if(location.protocol==="file:"){setSyncStatus("로컬 실행 · 온라인 문제팩은 웹 주소에서 동기화","ok");return}
+ try{
+  setSyncStatus("온라인 문제팩 확인 중","syncing");
+  const manifestUrl=new URL(REMOTE_MANIFEST,location.href);manifestUrl.searchParams.set("_",Date.now());
+  const response=await fetch(manifestUrl,{cache:"no-store"});if(!response.ok)throw new Error(`목록을 불러오지 못했습니다 (${response.status})`);
+  const manifest=await response.json();if(manifest.format!=="회계원리 학습센터 온라인 문제팩 목록"||!Array.isArray(manifest.packs))throw new Error("온라인 문제팩 목록 형식이 올바르지 않습니다.");
+  let loaded=0;
+  for(const item of manifest.packs.filter(p=>p.enabled!==false)){
+   const packUrl=new URL(item.file,manifestUrl);packUrl.searchParams.set("_",manifest.updatedAt||Date.now());
+   const packResponse=await fetch(packUrl,{cache:"no-store"});if(!packResponse.ok)throw new Error(`${item.chapter||item.file} 문제팩을 불러오지 못했습니다.`);
+   mergePack(await packResponse.json());loaded++
+  }
+  save();fillChapters();renderDashboard();renderRecords();setSyncStatus(`온라인 문제팩 ${loaded}개 동기화 완료`)
+ }catch(e){console.error(e);setSyncStatus("온라인 문제팩 확인 실패 · 기본문제로 학습 가능","error")}
 }
 
 function fillChapters(){
@@ -271,17 +304,13 @@ function afterImport(msg){fillChapters();renderDashboard();renderRecords();showN
 document.getElementById("packImportBtn").addEventListener("click",async()=>{
  try{
   const file=document.getElementById("packFile").files[0];if(!file)throw new Error("먼저 문제팩 JSON을 선택하세요.");
-  const obj=JSON.parse((await file.text()).replace(/^\uFEFF/,""));if(obj.format!=="회계원리 학습센터 문제팩"||!Array.isArray(obj.questions))throw new Error("학습센터 문제팩 형식이 아닙니다.");
-  const incoming=[...obj.questions,...(obj.variants||[])],ids=new Set([...state.questions,...obj.questions].map(q=>q.id));
-  incoming.forEach(q=>{if(!q.id||!q.chapter||!q.type||!q.concept||!q.q||!Array.isArray(q.o)||q.o.length!==4||!Number.isInteger(q.a)||q.a<0||q.a>3||!q.e)throw new Error(`문제 ${q.id||"(ID 없음)"}의 형식이 올바르지 않습니다.`)});
-  (obj.variants||[]).forEach(v=>{if(!v.parentId||!ids.has(v.parentId))throw new Error(`변형문제 ${v.id}의 원본 문제를 찾을 수 없습니다.`)});
-  state.questions=[...new Map([...state.questions,...obj.questions].map(q=>[q.id,q])).values()];
-  state.variants=[...new Map([...state.variants,...(obj.variants||[])].map(q=>[q.id,q])).values()];save();fillChapters();renderDashboard();
+  const obj=JSON.parse((await file.text()).replace(/^\uFEFF/,""));mergePack(obj);save();fillChapters();renderDashboard();
   showNotice("packNotice",`${obj.chapter||"새 단원"} 문제팩을 추가했습니다: 기본 ${obj.questions.length}문항, 변형 ${(obj.variants||[]).length}문항`)
  }catch(e){showNotice("packNotice","문제팩 추가 실패: "+e.message)}
 });
 
 fillChapters();renderDashboard();renderRecords();
+syncRemotePacks();
 </script>
 </body>
 </html>
