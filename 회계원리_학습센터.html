@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="전산회계 1급 회계원리 누적 오답 학습센터">
+  <title>회계원리 학습센터</title>
+  <style>
+    :root{--ink:#172525;--sub:#687674;--paper:#fffefa;--bg:#edf0e9;--line:#d9ddd4;--deep:#123d39;--green:#1f655b;--mint:#e4f1ed;--orange:#db6b4f;--gold:#e6ae48;--red:#b84f42;--redbg:#fbe9e5;--blue:#305f87;--shadow:0 18px 50px rgba(18,61,57,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 95% 0,rgba(219,107,79,.13),transparent 28rem),linear-gradient(180deg,#e8ece4,#f5f4ef 36rem,#eef0ea);font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.6}button,input,select{font:inherit}
+    .app{width:min(1180px,calc(100% - 28px));margin:auto;padding:24px 0 70px}.top{position:relative;overflow:hidden;padding:38px clamp(24px,5vw,58px);color:#fff;border-radius:26px;background:linear-gradient(130deg,var(--deep),#0c2d2a);box-shadow:var(--shadow)}.top:after{content:"✓";position:absolute;right:36px;bottom:-73px;color:rgba(255,255,255,.06);font:700 14rem Georgia,serif}.eyebrow{margin:0 0 8px;color:#f2c26c;font-size:.76rem;font-weight:900;letter-spacing:.17em}.top h1{margin:0;font:700 clamp(2.1rem,5vw,4.1rem)/1.08 Georgia,"Noto Serif KR",serif;letter-spacing:-.04em}.top p:not(.eyebrow){max-width:690px;margin:17px 0 0;color:#d6e5e2}.save-state{display:inline-flex;align-items:center;gap:7px;margin-top:19px;padding:6px 11px;border:1px solid rgba(255,255,255,.18);border-radius:99px;background:rgba(255,255,255,.07);font-size:.78rem}.dot{width:7px;height:7px;border-radius:50%;background:#7ed5ad;box-shadow:0 0 0 4px rgba(126,213,173,.13)}
+    .nav{position:sticky;z-index:20;top:8px;display:flex;gap:7px;margin:18px 0;padding:8px;border:1px solid var(--line);border-radius:16px;background:rgba(255,254,250,.92);box-shadow:0 8px 28px rgba(28,51,48,.08);backdrop-filter:blur(12px)}.nav button{flex:1;padding:10px 12px;border:0;border-radius:10px;color:var(--sub);background:transparent;font-weight:850;cursor:pointer}.nav button.active{color:#fff;background:var(--deep)}.view{display:none}.view.active{display:block}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.stat{padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--paper)}.stat span{display:block;color:var(--sub);font-size:.79rem}.stat strong{display:block;margin-top:5px;color:var(--deep);font:700 2rem Georgia,serif}.stat small{color:var(--sub)}
+    .panel{margin-top:15px;padding:clamp(20px,4vw,34px);border:1px solid var(--line);border-radius:21px;background:var(--paper);box-shadow:0 8px 30px rgba(26,48,45,.045)}.panel h2{margin:0 0 6px;font-size:1.22rem}.panel>.desc{margin:0 0 20px;color:var(--sub);font-size:.9rem}.section-title{display:flex;justify-content:space-between;align-items:end;gap:12px}.pill{padding:4px 9px;color:var(--deep);border-radius:99px;background:var(--mint);font-size:.74rem;font-weight:800}
+    .mastery{display:grid;gap:11px}.master-tools{display:flex;align-items:center;gap:7px}.master-tools .btn{padding:7px 10px;font-size:.76rem}.master-folder{overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#fff}.master-folder-head{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:9px;width:100%;padding:13px 15px;border:0;color:var(--ink);background:#f4f7f3;text-align:left;cursor:pointer}.master-folder-head:hover{background:#edf4ef}.folder-arrow{display:inline-grid;width:21px;height:21px;place-items:center;color:var(--deep);border-radius:50%;background:#dcebe5;font-size:.72rem;transition:transform .18s}.master-folder.open .folder-arrow{transform:rotate(90deg)}.folder-title{font-weight:900;letter-spacing:-.02em}.folder-score{color:var(--deep);font-weight:900}.folder-meta{color:var(--sub);font-size:.76rem}.master-folder-children{display:none;padding:6px 13px 10px}.master-folder.open .master-folder-children{display:grid;gap:8px}.master-row{display:grid;grid-template-columns:180px 1fr 62px;align-items:center;gap:12px;padding:3px 0;font-size:.86rem}.master-label{display:flex;align-items:center;gap:7px;min-height:30px}.master-label b{font-weight:850}.quick-type{width:100%;padding:0;border:0;color:inherit;background:transparent;text-align:left;font:inherit;font-weight:850;cursor:pointer}.quick-type:hover{text-decoration:underline;text-underline-offset:3px}.quick-type:focus-visible{outline:2px solid var(--deep);outline-offset:3px;border-radius:4px}.master-row.needs-review .master-label{padding:5px 7px 5px 9px;border:1px solid #f0bf83;border-radius:8px;background:linear-gradient(90deg,#fff1cf,#fffaf0);box-shadow:inset 4px 0 0 var(--orange)}.master-row.needs-review .master-label b,.master-row.needs-review .quick-type{color:#70351d}.master-row.watch .master-label b{color:#8a651d}.master-row.untried .master-label{color:#88938f}.master-row.untried .master-label:before{content:"";width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#c1c9c4}.meter{height:9px;overflow:hidden;border-radius:99px;background:#e2e5de}.meter i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--orange),var(--gold),var(--green))}.recommend-list{display:grid;gap:9px}.recommend-item{padding:13px 15px;border:1px solid #cfe0d9;border-radius:12px;background:var(--mint)}.recommend-item b{color:var(--deep)}.recommend-item p{margin:4px 0 0;color:#46635d;font-size:.86rem}.recommend-note{margin:12px 0 0;color:var(--sub);font-size:.83rem}.empty{padding:30px;color:var(--sub);border:1px dashed #cbd1ca;border-radius:15px;text-align:center}
+    .controls{display:flex;flex-wrap:wrap;gap:9px;align-items:end}.field{display:grid;gap:5px;min-width:180px;flex:1}.field label{color:var(--sub);font-size:.76rem;font-weight:800}.field input,.field select{width:100%;padding:11px 12px;color:var(--ink);border:1px solid var(--line);border-radius:10px;background:#fff}.btn{padding:11px 17px;border:0;border-radius:10px;font-weight:850;cursor:pointer;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.42;cursor:not-allowed;transform:none}.primary{color:#fff;background:var(--deep)}.accent{color:#fff;background:var(--orange)}.soft{color:var(--deep);background:#dfe8e5}.danger{color:var(--red);background:var(--redbg)}.study-guide{margin-top:18px;padding:18px;border:1px solid #cddfd7;border-radius:15px;background:linear-gradient(135deg,#f4faf6,#fffdf7)}.study-guide-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.study-guide h3{margin:0;color:var(--deep);font-size:1rem}.study-guide-lead{margin:5px 0 13px;color:#46635d;font-size:.86rem;font-weight:700}.guide-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0;padding:0;list-style:none;counter-reset:guide}.guide-steps li{position:relative;min-height:98px;padding:12px 11px 11px 42px;border:1px solid #dfe5dc;border-radius:11px;background:rgba(255,255,255,.8);counter-increment:guide}.guide-steps li:before{content:counter(guide);position:absolute;top:12px;left:11px;display:grid;width:22px;height:22px;place-items:center;color:#fff;border-radius:50%;background:var(--green);font-size:.74rem;font-weight:900}.guide-steps b{display:block;margin-bottom:3px;color:var(--deep);font-size:.84rem}.guide-steps span{display:block;color:var(--sub);font-size:.76rem;line-height:1.45}.guide-steps em{display:block;margin-bottom:3px;color:#724a1d;font-style:normal;font-weight:800}.guide-choices{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.guide-choice{padding:11px 13px;border-left:4px solid var(--gold);border-radius:9px;background:#fff8e9;color:#65533a;font-size:.8rem}.guide-choice strong{display:block;margin-bottom:3px;color:#70351d}.guide-choice p{margin:0;line-height:1.5}
+    .session-head{display:none;align-items:center;gap:12px;margin:15px 0;padding:13px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,254,250,.94)}.session-head.show{display:flex}.track{height:8px;flex:1;overflow:hidden;border-radius:99px;background:#dfe3dc}.bar{height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--orange),var(--gold));transition:.25s}.question{display:none}.question.show{display:block}.qhead{display:flex;justify-content:space-between;gap:12px}.qnum{color:var(--orange);font:700 1.1rem Georgia,serif}.tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px}.tag{padding:3px 8px;color:var(--deep);border-radius:99px;background:var(--mint);font-size:.7rem;font-weight:800}.variant{color:#7c4c13;background:#fff0d3}.question h3{margin:14px 0 20px;font-size:clamp(1.08rem,2.5vw,1.3rem);line-height:1.65}.case{margin:-5px 0 19px;padding:13px 16px;border-left:4px solid var(--gold);background:#fff5df;color:#624f30;font-size:.9rem}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.option{position:relative;display:flex;align-items:flex-start;gap:10px;padding:13px 14px;min-height:54px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer}.option input{position:absolute;opacity:0}.mark{display:grid;width:24px;height:24px;flex:0 0 24px;place-items:center;border:1px solid #bac2be;border-radius:50%;color:var(--sub);font-size:.75rem;font-weight:850}.option:has(input:checked){border-color:var(--green);background:var(--mint)}.option:has(input:checked) .mark{color:#fff;border-color:var(--green);background:var(--green)}.question.graded .option{cursor:default}.question.graded .option.correct{border-color:var(--green);background:#e3f3ec}.question.graded .option.wrong{border-color:var(--red);background:var(--redbg)}.why{display:none;margin-top:16px;padding:15px 17px;border-radius:12px;background:#f0f2ed;color:#50605d;font-size:.9rem}.question.graded .why{display:block}.why b{color:var(--deep)}.qactions{display:flex;justify-content:space-between;gap:10px;margin-top:17px}
+    .result{display:none;text-align:center}.result.show{display:block}.bigscore{color:var(--deep);font:700 clamp(3rem,8vw,5rem)/1 Georgia,serif}.result p{color:var(--sub)}.result-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}.mistake-reason,.understanding-note{margin-top:16px;padding:15px 17px;border:1px solid #f0bf83;border-radius:12px;background:#fff8e9}.mistake-reason strong,.understanding-note strong{display:block;margin-bottom:9px;color:#70351d}.understanding-note p{margin:0;color:#725641;font-size:.9rem}.reason-actions{display:flex;flex-wrap:wrap;gap:8px}.reason-actions .btn{flex:1;min-width:150px}.confidence{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#f7f8f4}.confidence-label{font-size:.82rem;font-weight:800;color:var(--sub);margin-right:3px}.confidence-option{display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid transparent;border-radius:8px;cursor:pointer;font-size:.88rem;font-weight:700}.confidence-option:has(input:checked){background:#e1f0eb;border-color:#a7cec0;color:var(--deep)}.confidence-option input{accent-color:var(--deep)}.confidence-memo{margin-top:10px;padding:12px 13px;border:1px solid #d7b77e;border-radius:11px;background:#fffdf7}.confidence-memo label{display:block;color:#70351d;font-size:.84rem;font-weight:850}.confidence-memo label span{color:var(--sub);font-size:.75rem;font-weight:600}.confidence-memo textarea{display:block;box-sizing:border-box;width:100%;min-height:68px;resize:vertical;margin-top:7px;padding:9px 10px;border:1px solid #d7b77e;border-radius:8px;font:inherit;font-size:.88rem;background:#fff}.confidence-memo p{margin:5px 0 0;color:#725641;font-size:.76rem}.question-table-wrap{margin:14px 0 18px;overflow-x:auto;border:1px solid #cad8d2;border-radius:12px;background:#fff}.question-table{width:100%;min-width:520px;border-collapse:collapse;font-size:.92rem}.question-table th,.question-table td{padding:11px 14px;border-bottom:1px solid #dce5df;text-align:center;white-space:nowrap}.question-table th{color:#314d46;background:#edf5f0;font-weight:900}.question-table tbody tr:last-child td{border-bottom:0}.question-table tbody tr:nth-child(even){background:#fbfcfa}.status.hold{color:#80550b;background:#fff0d2}.quick-modal{position:fixed;z-index:50;inset:0;display:grid;place-items:center;padding:18px;background:rgba(13,37,34,.45);backdrop-filter:blur(3px)}.quick-modal[hidden]{display:none}.quick-dialog{position:relative;width:min(560px,100%);padding:clamp(22px,5vw,30px);border:1px solid rgba(255,255,255,.6);border-radius:20px;background:var(--paper);box-shadow:0 24px 60px rgba(0,0,0,.22)}.quick-close{position:absolute;top:13px;right:13px;width:32px;height:32px;padding:0;border:0;border-radius:50%;color:var(--sub);background:#edf0e9;font-size:1.25rem;cursor:pointer}.quick-dialog h3{margin:0;color:var(--deep);font-size:1.3rem}.quick-dialog .eyebrow{margin-bottom:4px;color:var(--orange)}.quick-dialog p{margin:5px 0;color:var(--sub);font-size:.88rem}.quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:17px}.quick-action{min-height:90px;padding:13px;border:1px solid #cddfd7;border-radius:12px;color:var(--deep);background:#f7fbf8;text-align:left;font:inherit;cursor:pointer}.quick-action:hover:not(:disabled){border-color:var(--green);background:#e7f2ec}.quick-action:disabled{opacity:.45;cursor:not-allowed}.quick-action b{display:block;font-size:.9rem}.quick-action small{display:block;margin-top:4px;color:var(--sub);font-size:.76rem}.quick-action.recommended{border-color:#e6ae48;background:#fff8e8}.quick-note{margin-top:12px!important;padding:10px 12px;border-radius:9px;background:#f0f2ed;color:#50605d!important;font-size:.8rem!important}
+    .records{width:100%;border-collapse:collapse;font-size:.86rem}.records th,.records td{padding:11px 9px;border-bottom:1px solid var(--line);text-align:left}.records th{color:var(--sub);font-size:.75rem}.status{display:inline-block;padding:3px 8px;border-radius:99px;font-size:.72rem;font-weight:850}.need{color:var(--red);background:var(--redbg)}.done{color:var(--green);background:var(--mint)}.new{color:var(--blue);background:#e5eef6}
+    .manual{display:flex;flex-wrap:wrap;gap:9px}.manual input{flex:2;min-width:220px;padding:11px 12px;border:1px solid var(--line);border-radius:10px}.notice{display:none;margin-top:12px;padding:11px 14px;border-radius:10px;background:var(--mint);color:var(--deep);font-size:.85rem}.notice.show{display:block}.backup-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.drop{padding:23px;border:1px dashed #aebbb6;border-radius:15px;background:#fafbf8;text-align:center}.drop input{max-width:100%}.warning{padding:13px 15px;border-left:4px solid var(--orange);background:var(--redbg);color:#69443d;font-size:.87rem}.footer{margin-top:26px;color:var(--sub);font-size:.77rem;text-align:center}
+    @media(max-width:780px){.app{width:min(100% - 18px,1180px);padding-top:9px}.top{padding:33px 22px;border-radius:19px}.nav{overflow:auto}.nav button{min-width:95px}.grid{grid-template-columns:1fr 1fr}.scope{grid-template-columns:1fr 1fr}.options{grid-template-columns:1fr}.section-title{align-items:flex-start;flex-direction:column}.master-tools{align-self:flex-end}.master-row{grid-template-columns:135px 1fr 52px;gap:8px}.master-label{align-items:flex-start;flex-direction:column;gap:2px}.master-row.needs-review .master-label{padding:5px 6px 5px 8px}.master-folder-head{grid-template-columns:auto 1fr auto;gap:7px}.folder-meta{grid-column:2 / -1;grid-row:2}.backup-grid,.guide-choices,.quick-actions{grid-template-columns:1fr}.guide-steps{grid-template-columns:1fr}.guide-steps li{min-height:auto}.records{display:block;overflow-x:auto}.qactions{flex-wrap:wrap}}@media print{.top,.nav,.controls,.qactions,.footer{display:none!important}.view{display:none!important}#recordsView{display:block!important}.panel{box-shadow:none}}
+    .recommend-item{width:100%;text-align:left;font:inherit;cursor:pointer;transition:.15s}.recommend-item:hover{border-color:var(--green);background:#e7f2ec;transform:translateY(-1px)}.recommend-item:focus-visible{outline:3px solid #e6ae48;outline-offset:3px}
+  </style>
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <p class="eyebrow">COMPUTERIZED ACCOUNTING · LEVEL 1</p>
+    <h1>회계원리 학습센터</h1>
+    <p>틀린 문제를 잊지 않고 쌓아 두고, 다시 풀고, 같은 개념의 새로운 응용문제로 익히는 개인 학습 공간입니다.</p>
+    <span class="save-state"><i class="dot"></i> 이 브라우저에 자동 저장 중</span>
+  </header>
+
+  <div class="panel top-recommendation">
+    <h2>추천 복습</h2><p class="desc">단원별로 복습이 필요한 문항과 핵심 개념을 확인합니다.</p>
+    <div id="recommendation" class="empty">아직 풀이 기록이 없습니다. 첫 문제를 풀어 보세요.</div>
+  </div>
+
+  <nav class="nav" aria-label="주요 메뉴">
+    <button class="active" data-view="dashboard">학습 현황</button>
+    <button data-view="practice">문제 풀기</button>
+    <button data-view="records">오답노트</button>
+    <button data-view="backup">백업·복원</button>
+  </nav>
+
+  <section class="view active" id="dashboardView">
+    <div class="grid">
+      <div class="stat"><span>누적 풀이</span><strong id="totalAttempts">0</strong><small>회</small></div>
+      <div class="stat"><span>누적 정답률</span><strong id="accuracy">—</strong><small>전체 기록</small></div>
+      <div class="stat"><span>복습 필요</span><strong id="unresolved">0</strong><small>문항</small></div>
+      <div class="stat"><span>숙달 완료</span><strong id="mastered">0</strong><small>연속 2회 정답</small></div>
+    </div>
+    <div class="panel">
+      <div class="section-title"><div><h2>유형별 숙달도</h2><p class="desc">단원별 폴더를 열어 세부 유형의 정답률을 확인합니다. 주황색 강조 표시는 정답률 70% 미만인 유형입니다.</p></div><div class="master-tools"><button class="btn soft" id="masteryCloseAll" type="button">모두 닫기</button><button class="btn soft" id="masteryOpenAll" type="button">모두 보기</button><span class="pill">자동 분석</span></div></div>
+      <div class="mastery" id="masteryChart"></div>
+    </div>
+  </section>
+
+  <section class="view" id="practiceView">
+    <div class="panel" id="setupPanel">
+      <h2>학습 세션 만들기</h2><p class="desc">단원과 문제팩 출처, 학습 방식을 고른 뒤 시작하세요.</p>
+      <div class="controls">
+        <div class="field"><label for="chapterSelect">단원</label><select id="chapterSelect"></select></div>
+        <div class="field"><label for="sourceSelect">문제팩 출처</label><select id="sourceSelect"></select></div>
+        <div class="field"><label for="modeSelect">학습 방식</label><select id="modeSelect"><option value="all">전체 문제</option><option value="wrong">틀린 문제만</option><option value="weak">취약 유형 집중</option><option value="variant">틀린 유형 변형문제</option></select></div>
+        <div class="field"><label for="limitSelect">문항 수</label><select id="limitSelect"><option value="5">5문항 · 빠른 복습</option><option value="10" selected>10문항 · 권장</option><option value="20">20문항 · 집중 점검</option><option value="999">가능한 문제 모두</option></select></div>
+        <button class="btn primary" id="startBtn">학습 시작</button>
+      </div>
+       <div class="notice show" id="mixGuide">권장 10문항은 기본문제와 변형문제를 섞어 핵심 개념을 빠르게 점검합니다.</div>
+       <div class="notice" id="setupNotice"></div>
+       <aside class="study-guide" aria-label="추천 학습 순서">
+         <div class="study-guide-head"><h3>추천 학습 순서</h3><span class="pill">약점 보강용</span></div>
+         <p class="study-guide-lead">교재 전체 → AI 응용 전체 → 틀린 문제만 → 취약 유형 집중 → 틀린 유형 변형 → 통합 전체 점검</p>
+         <ol class="guide-steps">
+           <li><b>새 단원 시작</b><span><em>교재 문제팩 → 전체 문제 → 가능한 문제 모두</em>교재 핵심 유형부터 이해합니다.</span></li>
+           <li><b>이해 확인</b><span><em>GPT 또는 Claude → 전체 문제 → 10문항</em>새 상황에서도 풀리는지 확인합니다.</span></li>
+           <li><b>첫 복습</b><span><em>통합 학습 → 틀린 문제만 → 5~10문항</em>틀린 문제를 먼저 바로잡습니다.</span></li>
+           <li><b>약점 보강</b><span><em>통합 학습 → 취약 유형 집중 → 5~10문항</em>같은 유형을 반복해서 틀릴 때 선택합니다.</span></li>
+           <li><b>진짜 이해 확인</b><span><em>통합 학습 → 틀린 유형 변형문제 → 5~10문항</em>답 암기가 아닌 개념 이해를 확인합니다.</span></li>
+           <li><b>단원 마무리</b><span><em>통합 학습 → 전체 문제 → 10문항</em>오답이 줄었을 때 섞어서 최종 점검합니다.</span></li>
+         </ol>
+         <div class="guide-choices">
+           <div class="guide-choice"><strong>문제팩 출처는 이렇게</strong><p>처음에는 <b>교재 문제팩</b>, 응용 연습은 <b>GPT·Claude 문제팩</b>, 마지막 점검과 복습은 <b>통합 학습</b>을 추천합니다. 교재 문제팩이 없으면 학습센터 기본 문제 또는 가져온 문제팩부터 시작하세요.</p></div>
+           <div class="guide-choice"><strong>학습 방식은 이렇게</strong><p><b>전체 문제</b>는 새 단원·마무리 점검, <b>틀린 문제만</b>은 첫 복습, <b>취약 유형 집중</b>은 반복 실수, <b>틀린 유형 변형문제</b>는 개념 이해 확인에 사용합니다.</p></div>
+         </div>
+       </aside>
+     </div>
+    <div class="session-head" id="sessionHead"><div class="track"><div class="bar" id="sessionBar"></div></div><b id="sessionCount">1 / 1</b></div>
+    <div class="panel question" id="questionCard"></div>
+    <div class="panel result" id="sessionResult"></div>
+  </section>
+
+  <section class="view" id="recordsView">
+    <div class="panel">
+      <h2>기존 문제 오답 직접 등록</h2>
+      <p class="desc">원본 HTML에서 먼저 푼 경우, 문제팩 출처를 고른 뒤 틀린 번호를 입력하면 누적 오답에 포함됩니다.</p>
+      <div class="manual">
+        <select id="manualChapter"></select>
+        <select id="manualSource"></select>
+        <input id="manualNumbers" placeholder="예: 3, 7, 9" aria-label="틀린 문제 번호">
+        <button class="btn accent" id="manualAdd">오답 등록</button>
+      </div>
+      <div class="notice" id="manualNotice"></div>
+    </div>
+    <div class="panel">
+      <div class="section-title"><div><h2>누적 오답노트</h2><p class="desc">숙달 후에도 이력은 삭제되지 않습니다.</p></div><button class="btn soft" id="printBtn">인쇄</button></div>
+      <div id="recordsTable"></div>
+    </div>
+  </section>
+
+  <section class="view" id="backupView">
+    <div class="panel">
+      <h2>새 단원 문제팩 가져오기</h2>
+      <p class="desc">교재 자료가 있든 없든, 제가 만들어 드린 UTF-8 문제팩 JSON을 선택하면 새 단원과 변형문제가 학습센터에 추가됩니다.</p>
+      <div class="drop">
+        <div class="field"><label for="packFile">가져올 문제팩 JSON</label><input type="file" id="packFile" accept=".json,application/json"></div>
+        <p>기존 학습기록은 건드리지 않으며, 같은 문제 ID는 최신 문제팩 내용으로 갱신합니다.</p>
+        <button class="btn primary" id="packImportBtn">문제팩 추가</button>
+      </div>
+      <div class="notice" id="packNotice"></div>
+    </div>
+    <div class="panel">
+      <h2>JSON 백업·복원</h2>
+      <p class="desc">파일 이름을 한글로 자유롭게 정할 수 있습니다. JSON 내부도 UTF-8 한글로 저장됩니다.</p>
+      <div class="backup-grid">
+        <div class="drop">
+          <div class="field"><label for="backupName">저장할 파일 이름</label><input id="backupName" value="기초이론 학습기록"></div>
+          <p>문제은행, 오답 이력, 숙달도와 설정을 한 파일로 저장합니다.</p>
+          <button class="btn primary" id="exportBtn">JSON 저장</button>
+        </div>
+        <div class="drop">
+          <div class="field"><label for="importFile">복원할 JSON 파일</label><input type="file" id="importFile" accept=".json,application/json"></div>
+          <p><b>기록 합치기</b>: 현재 기록을 유지하고 JSON의 기록을 더합니다. 단원별 백업을 모을 때 사용하세요.</p>
+          <p><b>백업으로 교체</b>: 현재 기록을 지우고 JSON 저장 당시 상태로 되돌립니다. 기기 이전이나 복구할 때 사용하세요.</p>
+          <button class="btn soft" id="mergeBtn">기록 합치기</button>
+          <button class="btn danger" id="replaceBtn">백업으로 교체</button>
+        </div>
+      </div>
+      <div class="notice" id="backupNotice"></div>
+    </div>
+    <div class="panel">
+      <h2>데이터 관리 원칙</h2>
+      <div class="warning">브라우저 기록을 삭제하면 내부 저장소도 지워질 수 있습니다. 단원이 끝날 때마다 한글 이름으로 JSON 백업을 저장해 두세요.</div>
+    </div>
+  </section>
+  <div class="quick-modal" id="quickModal" hidden aria-hidden="true">
+    <div class="quick-dialog" role="dialog" aria-modal="true" aria-labelledby="quickTitle">
+      <button class="quick-close" id="quickClose" type="button" aria-label="빠른 복습 닫기">×</button>
+      <p class="eyebrow">QUICK REVIEW</p>
+      <h3 id="quickTitle">빠른 복습</h3>
+      <p id="quickMeta"></p>
+      <div class="quick-actions">
+        <button class="quick-action recommended" type="button" data-quick-action="wrong" data-quick-limit="5"><b>추천 · 틀린 문제만</b><small>5문항으로 먼저 바로잡기</small></button>
+        <button class="quick-action" type="button" data-quick-action="weak" data-quick-limit="5"><b>취약 유형 집중</b><small>5문항으로 같은 유형 연습</small></button>
+        <button class="quick-action" type="button" data-quick-action="variant" data-quick-limit="5"><b>틀린 유형 변형문제</b><small>5문항으로 개념 이해 확인</small></button>
+        <button class="quick-action" type="button" data-quick-action="weak" data-quick-limit="10"><b>10문항으로 충분히 점검</b><small>같은 유형을 넓게 다시 풀기</small></button>
+      </div>
+      <p class="quick-note" id="quickNote">추천 순서: 틀린 문제만 → 취약 유형 집중 → 변형문제 → 통합 전체 점검</p>
+    </div>
+  </div>
+<p class="footer">회계원리 학습센터 v2.3 · 모든 데이터는 사용자의 브라우저와 사용자가 저장한 JSON 파일에만 보관됩니다.</p>
+</main>
+
+<script>
+"use strict";
+const APP_KEY="accountingStudyCenter_v1";
+const APP_VERSION="2.3";
+const baseQuestions=[
+ {id:"BASIC-001",chapter:"기초이론",number:1,type:"회계의 기본가정",concept:"기간별보고",q:"12월 31일 결산법인이 아직 사용하지 않은 보험료를 선급비용으로 조정하였다. 이러한 기말결산정리가 필요한 가장 직접적인 근거는?",o:["기업실체의 가정","기간별보고의 가정","화폐단위의 가정","기업소유주의 가정"],a:1,e:"계속되는 기업활동을 일정한 기간으로 나누어 보고하기 때문에 각 기간에 귀속될 수익과 비용을 결산 때 조정합니다."},
+ {id:"BASIC-002",chapter:"기초이론",number:2,type:"회계의 기본가정",concept:"기업실체",q:"개인기업의 대표가 가족여행 비용을 사업용 카드로 결제했다. 회계담당자가 이를 대표자 인출금으로 처리한 근거가 되는 가정은?",o:["계속기업의 가정","기간별보고의 가정","기업실체의 가정","발생주의 가정"],a:2,e:"회계상 기업과 소유주는 별개의 실체이므로 소유주의 사적 지출은 기업의 비용이 아닙니다."},
+ {id:"BASIC-003",chapter:"기초이론",number:3,type:"회계의 기본가정",concept:"계속기업",q:"회사가 보유한 기계를 당장 처분할 때의 급매가격이 아니라 내용연수 동안 감가상각하는 데 가장 관련 깊은 기본가정은?",o:["계속기업의 가정","기업실체의 가정","화폐단위의 가정","객관성의 원칙"],a:0,e:"기업이 가까운 미래에 청산하지 않고 영업을 계속할 것이라는 전제에서 자산을 사용기간에 걸쳐 비용화합니다."},
+ {id:"BASIC-004",chapter:"기초이론",number:4,type:"회계정보의 질적특성",concept:"목적적합성",q:"투자자가 다음 해 매출을 예측하는 데 도움이 되도록 제품군별 매출 추세를 공시했다. 가장 직접적으로 관련된 질적특성은?",o:["검증가능성","비교가능성","이해가능성","목적적합성"],a:3,e:"미래 결과를 예측하는 데 도움을 주는 예측가치는 목적적합성의 핵심 요소입니다."},
+ {id:"BASIC-005",chapter:"기초이론",number:5,type:"회계정보의 질적특성",concept:"충실한 표현",q:"회계정보가 완전하고 중립적이며 중요한 오류가 없도록 작성되어야 한다는 요구를 가장 잘 나타내는 것은?",o:["목적적합성","충실한 표현","적시성","이해가능성"],a:1,e:"완전성·중립성·무오류성은 경제적 현상을 충실하게 표현하기 위한 요소입니다."},
+ {id:"BASIC-006",chapter:"기초이론",number:6,type:"회계정보의 질적특성",concept:"비교가능성",q:"기업이 정당한 사유 없이 매년 재고자산 평가방법을 바꾼다면 가장 크게 훼손될 수 있는 회계정보의 특성은?",o:["적시성","검증가능성","비교가능성","중립성"],a:2,e:"회계정책의 일관성은 기간 간 비교를 가능하게 합니다."},
+ {id:"BASIC-007",chapter:"기초이론",number:7,type:"재무제표",concept:"재무상태표 배열",q:"일반기업회계기준상 재무상태표의 표시와 관련한 설명으로 옳지 않은 것은?",o:["자산은 원칙적으로 유동자산과 비유동자산으로 구분한다.","자산과 부채는 원칙적으로 유동성이 낮은 항목부터 배열한다.","부채는 원칙적으로 유동부채와 비유동부채로 구분한다.","자본에는 자본금과 이익잉여금 등이 포함된다."],a:1,e:"일반적인 재무상태표는 현금화 또는 결제 시점이 빠른, 즉 유동성이 높은 항목부터 배열합니다."},
+ {id:"BASIC-008",chapter:"기초이론",number:8,type:"재무제표",concept:"작성 책임",q:"외부감사인이 적정의견을 표명한 회사의 재무제표에서 중요한 오류가 발견되었다. 재무제표 작성과 표시에 대한 일차적 책임자는?",o:["회사의 경영진","외부감사인","세무서","회사의 채권자"],a:0,e:"외부감사인은 의견을 표명하지만 재무제표 작성과 공정한 표시의 책임은 경영진에게 있습니다."},
+ {id:"BASIC-009",chapter:"기초이론",number:9,type:"회계절차",concept:"시산표 오류",q:"다음 오류 중 합계시산표의 차변 합계와 대변 합계가 일치하지 않아 발견할 가능성이 가장 높은 것은?",o:["거래 전체를 분개하지 않았다.","차변과 대변에 같은 오금액을 기록했다.","차변계정과 대변계정을 서로 바꾸어 기록했다.","차변 금액만 두 번 전기했다."],a:3,e:"한쪽만 이중 전기하면 차변·대변 합계가 달라집니다. 양쪽에 같은 영향을 준 오류는 합계가 일치할 수 있습니다."},
+ {id:"BASIC-010",chapter:"기초이론",number:10,type:"재무제표",concept:"재무제표 역할",q:"재무제표와 제공 정보의 연결로 옳지 않은 것은?",o:["재무상태표 — 일정 시점의 자산·부채·자본","손익계산서 — 일정 기간의 경영성과","현금흐름표 — 일정 시점의 현금 잔액만 표시","주석 — 재무제표 항목의 보충 설명과 미인식 정보"],a:2,e:"현금흐름표는 일정 기간의 현금 유입과 유출을 영업·투자·재무활동으로 구분하여 보여 줍니다."},
+ {id:"BASIC-011",chapter:"기초이론",number:11,type:"재무제표",concept:"자산 분류",q:"다음 자산의 재무상태표 분류가 올바르게 연결된 것은?",o:["상품 — 유형자산","건설중인자산 — 유형자산","영업용 특허권 — 투자자산","1년 후 사용할 장기선급비용 — 유동자산"],a:1,e:"건설중인자산은 완성 전의 유형자산입니다. 상품은 재고자산, 특허권은 무형자산입니다."},
+ {id:"BASIC-012",chapter:"기초이론",number:12,type:"회계절차",concept:"발생주의",q:"12월에 서비스를 제공했으나 아직 청구하지 않았고 대금 2,000,000원은 다음 해 1월에 받기로 했다. 12월 결산 시 올바른 처리는?",o:["1월에 현금을 받을 때 수익을 인식한다.","12월에 부채를 인식한다.","12월과 1월에 각각 절반씩 수익을 인식한다.","12월에 미수수익과 수익을 각각 2,000,000원 인식한다."],a:3,e:"발생주의에서는 용역을 제공한 12월에 수익을 인식하고 아직 받지 못한 금액은 미수수익으로 기록합니다."}
+];
+const variantQuestions=[
+ {id:"BASIC-V001",parentId:"BASIC-001",chapter:"기초이론",number:"V1",type:"회계의 기본가정",concept:"기간별보고",variant:true,q:"3월 말 분기보고서를 작성하면서 4월분 임차료를 선급비용으로 남겨 두었다. 이 처리의 직접적인 근거는?",o:["화폐단위의 가정","기업실체의 가정","기간별보고의 가정","계속기업의 가정"],a:2,e:"분기라는 인위적인 보고기간에 속하는 비용만 반영해야 하므로 기간별보고의 가정과 관련됩니다."},
+ {id:"BASIC-V002",parentId:"BASIC-002",chapter:"기초이론",number:"V2",type:"회계의 기본가정",concept:"기업실체",variant:true,q:"법인 대표가 개인 소유 토지를 회사의 자산으로 기록하라고 요구했다. 이를 거절할 근거는?",o:["기업실체의 가정","계속기업의 가정","기간별보고의 가정","중요성의 원칙"],a:0,e:"법인과 대표 개인의 자산은 서로 구분되어야 합니다."},
+ {id:"BASIC-V003",parentId:"BASIC-003",chapter:"기초이론",number:"V3",type:"회계의 기본가정",concept:"계속기업",variant:true,q:"회사가 최소 향후 12개월 동안 정상적으로 영업할 것으로 보고 자산과 부채를 분류했다. 적용된 가정은?",o:["발생주의","기업실체","계속기업","화폐단위"],a:2,e:"예측 가능한 미래에 영업을 계속할 것이라는 전제가 계속기업의 가정입니다."},
+ {id:"BASIC-V004",parentId:"BASIC-004",chapter:"기초이론",number:"V4",type:"회계정보의 질적특성",concept:"목적적합성",variant:true,q:"작년 예상치와 실제 실적을 비교할 수 있는 정보를 제공하여 이용자가 과거 판단을 수정하도록 했다. 이 정보가 갖는 가치는?",o:["피드백가치","검증가능성","중립성","이해가능성"],a:0,e:"기존 평가를 확인하거나 수정하게 하는 능력은 피드백가치이며 목적적합성과 관련됩니다."},
+ {id:"BASIC-V005",parentId:"BASIC-005",chapter:"기초이론",number:"V5",type:"회계정보의 질적특성",concept:"충실한 표현",variant:true,q:"소송의 불리한 가능성을 숨기지 않고 유리하거나 불리한 방향으로 치우치지 않게 공시했다. 특히 강화되는 특성은?",o:["적시성","비교가능성","중립성","예측가치"],a:2,e:"정보를 특정 결과로 유도하려는 편향 없이 제시하는 것은 중립성입니다."},
+ {id:"BASIC-V006",parentId:"BASIC-006",chapter:"기초이론",number:"V6",type:"회계정보의 질적특성",concept:"비교가능성",variant:true,q:"동종업계 두 회사가 같은 경제적 거래에 같은 회계처리 기준을 적용했다. 정보이용자에게 가장 직접적으로 향상되는 특성은?",o:["적시성","비교가능성","완전성","중립성"],a:1,e:"기업 간 유사점과 차이점을 식별할 수 있게 하므로 비교가능성이 향상됩니다."},
+ {id:"BASIC-V007",parentId:"BASIC-007",chapter:"기초이론",number:"V7",type:"재무제표",concept:"재무상태표 배열",variant:true,q:"다음 중 일반적으로 재무상태표에서 다른 항목보다 먼저 표시될 가능성이 가장 높은 것은?",o:["토지","장기차입금","현금및현금성자산","자본금"],a:2,e:"유동성이 높은 항목부터 배열할 때 현금및현금성자산이 먼저 표시됩니다."},
+ {id:"BASIC-V008",parentId:"BASIC-008",chapter:"기초이론",number:"V8",type:"재무제표",concept:"작성 책임",variant:true,q:"회계담당자가 초안을 만들고 감사인이 검토한 재무제표의 최종 작성 책임은 누구에게 있는가?",o:["감사인","경영진","주주","금융기관"],a:1,e:"실무 작성자나 감사인과 관계없이 재무제표 작성 책임은 경영진에게 있습니다."},
+ {id:"BASIC-V009",parentId:"BASIC-009",chapter:"기초이론",number:"V9",type:"회계절차",concept:"시산표 오류",variant:true,q:"상품 700,000원 매입을 차변 상품 70,000원, 대변 외상매입금 70,000원으로 기록했다. 시산표로 이 오류를 발견할 수 있는가?",o:["차변만 틀려 발견된다.","대변만 틀려 발견된다.","양쪽 합계가 달라 발견된다.","양쪽에 같은 금액을 기록해 발견하기 어렵다."],a:3,e:"금액은 틀렸지만 차변과 대변에 같은 금액을 기록했으므로 시산표 합계는 일치합니다."},
+ {id:"BASIC-V010",parentId:"BASIC-010",chapter:"기초이론",number:"V10",type:"재무제표",concept:"재무제표 역할",variant:true,q:"기업이 설비 취득과 차입금 상환으로 현금이 얼마나 변했는지 확인하는 데 가장 적합한 재무제표는?",o:["재무상태표","손익계산서","현금흐름표","주석만으로 충분"],a:2,e:"설비 취득은 투자활동, 차입금 상환은 재무활동 현금흐름에서 확인합니다."},
+ {id:"BASIC-V011",parentId:"BASIC-011",chapter:"기초이론",number:"V11",type:"재무제표",concept:"자산 분류",variant:true,q:"다음 중 무형자산으로 분류되는 것은?",o:["영업용 건물","판매 목적 상품","등록된 특허권","장기대여금"],a:2,e:"물리적 실체가 없는 식별 가능한 특허권은 무형자산입니다."},
+ {id:"BASIC-V012",parentId:"BASIC-012",chapter:"기초이론",number:"V12",type:"회계절차",concept:"발생주의",variant:true,q:"12월분 급여 3,000,000원을 다음 해 1월에 지급한다. 12월 결산 시 필요한 처리는?",o:["아무 처리도 하지 않는다.","급여와 미지급비용을 인식한다.","선급비용을 인식한다.","1월 급여비용으로만 인식한다."],a:1,e:"현금 지급 전이라도 12월에 근로용역을 제공받았으므로 급여비용과 미지급비용을 인식합니다."}
+];
+
+function freshState(){return{version:APP_VERSION,questions:baseQuestions,variants:variantQuestions,progress:{},attempts:[],settings:{masteryStreak:2}}}
+function normalizeState(s){
+ const qmap=new Map([...(s.questions||[]),...baseQuestions].map(q=>[q.id,q])),vmap=new Map([...(s.variants||[]),...variantQuestions].map(q=>[q.id,q]));
+ s.questions=[...qmap.values()];s.variants=[...vmap.values()];s.progress=s.progress||{};s.attempts=s.attempts||[];s.settings=s.settings||{masteryStreak:2};s.version=APP_VERSION;return s
+}
+function loadState(){try{const s=JSON.parse(localStorage.getItem(APP_KEY));if(s&&s.progress&&Array.isArray(s.questions))return normalizeState(s)}catch(e){}return freshState()}
+let state=loadState(),session=[],sessionIndex=0,sessionCorrect=0,answered=false,pendingAttempt=null,sessionStates=[],sessionDrafts=[],quickTarget=null;
+function save(){localStorage.setItem(APP_KEY,JSON.stringify(state))}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function questionTable(table){
+ if(!table||!Array.isArray(table.rows)||!table.rows.length)return "";
+ const headers=Array.isArray(table.headers)?table.headers:[],columnCount=headers.length||Math.max(...table.rows.map(row=>Array.isArray(row)?row.length:0));
+ const head=headers.length?`<thead><tr>${headers.map(cell=>`<th scope="col">${esc(cell)}</th>`).join("")}</tr></thead>`:"";
+ const body=table.rows.map(row=>`<tr>${Array.from({length:columnCount},(_,i)=>`<td>${esc(Array.isArray(row)&&row[i]!=null?row[i]:"")}</td>`).join("")}</tr>`).join("");
+ return `<div class="question-table-wrap" role="region" aria-label="문제 자료 표" tabindex="0"><table class="question-table">${head}<tbody>${body}</tbody></table></div>`
+}
+function validQuestionTable(table){return table==null||(typeof table==="object"&&Array.isArray(table.rows)&&table.rows.length>0&&table.rows.every(row=>Array.isArray(row))&&(!table.headers||Array.isArray(table.headers)))}
+function chapters(){return[...new Set(state.questions.map(q=>q.chapter))]}
+function sourceFor(q){const id=String((q&&q.id)||"");if(id.startsWith("CA-")||id.startsWith("INV-CLA-"))return "Claude 문제팩";if(q&&q.source)return q.source;if(id.startsWith("CASH-")||id.startsWith("INV-GPT-"))return "GPT 문제팩";if(id.startsWith("BASIC-"))return "학습센터 기본 문제";return "가져온 문제팩"}
+function sourceOptions(chapter){return[...new Set([...state.questions,...state.variants].filter(q=>q.chapter===chapter).map(sourceFor))].sort((a,b)=>a.localeCompare(b,"ko"))}
+function fillSourceSelect(id,chapter){const el=document.getElementById(id),current=el.value,sources=sourceOptions(chapter);el.innerHTML=`<option value="">통합 학습 · 모든 문제팩</option>${sources.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join("")}`;if(sources.includes(current))el.value=current}
+function fillSources(){fillSourceSelect("sourceSelect",document.getElementById("chapterSelect").value);fillSourceSelect("manualSource",document.getElementById("manualChapter").value)}
+function pFor(id){return state.progress[id]||{attempts:0,correct:0,wrong:0,streak:0,last:null,manual:false,uncertain:false}}
+function isUnresolved(id){const p=pFor(id);return!!p.uncertain||(p.wrong>0&&p.streak<(state.settings.masteryStreak||2))}
+function shuffle(a){return[...a].sort(()=>Math.random()-.5)}
+function balancedMixed(chapter,limit,source=""){
+ const allowed=q=>q.chapter===chapter&&(!source||sourceFor(q)===source),bases=shuffle(state.questions.filter(allowed)),vars=state.variants.filter(allowed);
+ if(limit>=999)return shuffle([...bases,...vars]);
+ const byParent=new Map();vars.forEach(v=>{if(!byParent.has(v.parentId))byParent.set(v.parentId,[]);byParent.get(v.parentId).push(v)});
+ const firstCount=Math.min(limit,bases.length),variantTarget=Math.min(vars.length,Math.round(firstCount*.4)),selected=[];
+ bases.forEach((b,i)=>{const choices=byParent.get(b.id)||[];selected.push(i<variantTarget&&choices.length?shuffle(choices)[0]:b)});
+ const chosen=new Set(selected.map(q=>q.id)),rest=shuffle([...bases,...vars].filter(q=>!chosen.has(q.id)));
+ return[...selected,...rest].slice(0,limit)
+}
+function applyAttemptToProgress(p,a){
+ const actualCorrect=typeof a.actualCorrect==="boolean"?a.actualCorrect:!!a.correct,hold=!!a.understandingHold||a.confidence==="unsure"||a.confidence==="guess";
+ p.attempts++;
+ if(a.correct){p.correct++;p.streak++;if(p.uncertain&&p.streak>=(state.settings.masteryStreak||2))p.uncertain=false}
+ else{if(!actualCorrect)p.wrong++;if(hold)p.uncertain=true;p.streak=0}
+ p.last=a.at||new Date().toISOString();p.manual=p.manual||!!a.manual;return p
+}
+function rebuildProgress(){
+ const rebuilt={};
+ [...state.attempts].sort((a,b)=>String(a.at).localeCompare(String(b.at))).forEach(a=>{const p=rebuilt[a.questionId]||{attempts:0,correct:0,wrong:0,streak:0,last:null,manual:false,uncertain:false};rebuilt[a.questionId]=applyAttemptToProgress(p,a)});
+ state.progress=rebuilt
+}
+
+function fillChapters(){
+ const opts=chapters().map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join("");
+ document.getElementById("chapterSelect").innerHTML=opts;document.getElementById("manualChapter").innerHTML=opts;fillSources()
+}
+function chapterLabel(chapter){return chapter==="기초이론"?"회계 이론":chapter}
+function masteryStatus(rate,attempts){return!attempts?"untried":rate<70?"needs-review":rate<90?"watch":"solid"}
+function bindMasteryFolders(){
+ document.querySelectorAll("[data-mastery-folder]").forEach(btn=>btn.addEventListener("click",()=>{
+  const chapter=btn.dataset.masteryFolder;state.settings.masteryFolders=state.settings.masteryFolders||{};state.settings.masteryFolders[chapter]=!state.settings.masteryFolders[chapter];save();renderDashboard()
+ }))
+}
+function setAllMasteryFolders(open){
+ state.settings.masteryFolders=state.settings.masteryFolders||{};chapters().forEach(chapter=>state.settings.masteryFolders[chapter]=open);save();renderDashboard()
+}
+function bindQuickTypeButtons(){
+ document.querySelectorAll("[data-quick-chapter]").forEach(btn=>btn.addEventListener("click",()=>openQuickPractice(btn.dataset.quickChapter,btn.dataset.quickType)))
+}
+function bindRecommendationButtons(){
+ document.querySelectorAll("[data-recommend-chapter]").forEach(btn=>btn.addEventListener("click",()=>startRecommendedReview(btn.dataset.recommendChapter)))
+}
+function startRecommendedReview(chapter){
+ const pending=state.questions.filter(q=>q.chapter===chapter&&isUnresolved(q.id));if(!pending.length){renderDashboard();return}
+ document.getElementById("chapterSelect").value=chapter;fillSourceSelect("sourceSelect",chapter);document.getElementById("sourceSelect").value="";document.getElementById("modeSelect").value="wrong";document.getElementById("limitSelect").value="999";
+ switchView("practice");startSession()
+}
+function quickBaseQuestions(){return quickTarget?state.questions.filter(q=>q.chapter===quickTarget.chapter&&q.type===quickTarget.type):[]}
+function quickPool(mode){
+ const bases=quickBaseQuestions();
+ if(mode==="wrong")return bases.filter(q=>isUnresolved(q.id));
+ if(mode==="variant"){const ids=new Set(bases.filter(q=>isUnresolved(q.id)).map(q=>q.id));return state.variants.filter(v=>v.chapter===quickTarget.chapter&&ids.has(v.parentId))}
+ return bases
+}
+function openQuickPractice(chapter,type){
+ quickTarget={chapter,type};const bases=quickBaseQuestions(),wrong=quickPool("wrong"),variants=quickPool("variant"),modal=document.getElementById("quickModal");
+ document.getElementById("quickTitle").textContent=`${chapterLabel(chapter)} · ${type}`;
+ document.getElementById("quickMeta").textContent=`전체 ${bases.length}문항 중 복습 필요 ${wrong.length}문항입니다. 원하는 방식으로 바로 시작하세요.`;
+ document.querySelectorAll("[data-quick-action]").forEach(btn=>{const count=quickPool(btn.dataset.quickAction).length;btn.disabled=!count});
+ document.getElementById("quickNote").textContent=wrong.length?"추천 순서: 틀린 문제만 → 취약 유형 집중 → 변형문제 → 통합 전체 점검":"현재 남은 오답은 없습니다. 취약 유형 집중으로 한 번 더 점검해 보세요.";
+ modal.hidden=false;modal.setAttribute("aria-hidden","false");document.getElementById("quickClose").focus()
+}
+function closeQuickPractice(){const modal=document.getElementById("quickModal");modal.hidden=true;modal.setAttribute("aria-hidden","true");quickTarget=null}
+function startQuickPractice(mode,limit){
+ const pool=quickPool(mode);if(!pool.length)return;
+ const chapter=quickTarget.chapter;closeQuickPractice();document.getElementById("chapterSelect").value=chapter;fillSourceSelect("sourceSelect",chapter);document.getElementById("sourceSelect").value="";document.getElementById("modeSelect").value=mode;document.getElementById("limitSelect").value=String(limit);
+ session=shuffle(pool).slice(0,limit);sessionIndex=0;sessionCorrect=0;answered=false;pendingAttempt=null;sessionStates=[];sessionDrafts=[];
+ switchView("practice");document.getElementById("setupPanel").style.display="none";document.getElementById("sessionHead").classList.add("show");document.getElementById("sessionResult").classList.remove("show");renderQuestion()
+}
+function renderDashboard(){
+ const ps=Object.values(state.progress),total=state.attempts.length,correct=state.attempts.filter(a=>a.correct).length;
+ document.getElementById("totalAttempts").textContent=total;
+ document.getElementById("accuracy").textContent=total?Math.round(correct/total*100)+"%":"—";
+ document.getElementById("unresolved").textContent=state.questions.filter(q=>isUnresolved(q.id)).length;
+ document.getElementById("mastered").textContent=ps.filter(p=>p.wrong>0&&p.streak>=state.settings.masteryStreak).length;
+ const folders=chapters().map(chapter=>{
+  const chapterQuestions=state.questions.filter(q=>q.chapter===chapter),ids=chapterQuestions.map(q=>q.id),attempts=state.attempts.filter(x=>ids.includes(x.questionId)),rate=attempts.length?Math.round(attempts.filter(x=>x.correct).length/attempts.length*100):0,status=masteryStatus(rate,attempts.length),open=!!(state.settings.masteryFolders&&state.settings.masteryFolders[chapter]);
+  const types=[...new Set(chapterQuestions.map(q=>q.type))];
+  const rows=types.map(t=>{const typeQuestions=chapterQuestions.filter(q=>q.type===t),typeIds=typeQuestions.map(q=>q.id),a=state.attempts.filter(x=>typeIds.includes(x.questionId)),typeRate=a.length?Math.round(a.filter(x=>x.correct).length/a.length*100):0,typeStatus=masteryStatus(typeRate,a.length),unresolved=typeQuestions.filter(q=>isUnresolved(q.id)).length,label=typeStatus==="needs-review"&&unresolved?`<button class="quick-type" type="button" data-quick-chapter="${esc(chapter)}" data-quick-type="${esc(t)}" title="빠른 복습 선택">${esc(t)}</button>`:`<b>${esc(t)}</b>`;return`<div class="master-row ${typeStatus}"><div class="master-label">${label}</div><div class="meter"><i style="width:${typeRate}%"></i></div><span>${a.length?typeRate+"%":"미응시"}</span></div>`}).join("");
+  return`<section class="master-folder ${open?"open":""} ${status}" data-folder-chapter="${esc(chapter)}"><button class="master-folder-head" type="button" data-mastery-folder="${esc(chapter)}" aria-expanded="${open}"><span class="folder-arrow">▶</span><span class="folder-title">${esc(chapterLabel(chapter))}</span><span class="folder-score">${attempts.length?rate+"%":"미응시"}</span><span class="folder-meta">${chapterQuestions.length}문항 · ${types.length}개 유형</span></button><div class="master-folder-children">${rows}</div></section>`
+ }).join("");
+ document.getElementById("masteryChart").innerHTML=folders||'<div class="empty">문제 유형이 없습니다.</div>';bindMasteryFolders();bindQuickTypeButtons();
+ const wrong=state.questions.filter(q=>isUnresolved(q.id));
+ const recommendation=wrong.length?`<div class="recommend-list">${chapters().map(chapter=>{
+  const items=wrong.filter(q=>q.chapter===chapter);if(!items.length)return "";
+  const concepts=[...items.reduce((map,q)=>{const key=`${q.type} · ${q.concept}`;map.set(key,(map.get(key)||0)+1);return map},new Map()).entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"ko")).slice(0,2).map(([key,count])=>`${esc(key)} ${count}문항`).join(" · ");
+  return`<button class="recommend-item" type="button" data-recommend-chapter="${esc(chapter)}" title="${esc(chapter)} 복습 필요 문제 바로 풀기"><b>${esc(chapter)} · 복습 필요 ${items.length}문항</b><p>${concepts}</p></button>`
+ }).join("")}</div><p class="recommend-note">단원 버튼을 누르면 해당 단원의 ‘틀린 문제만’이 바로 시작됩니다.</p>`:"현재 남아 있는 오답이 없습니다. 전체 문제로 기억을 점검해 보세요.";
+ document.getElementById("recommendation").innerHTML=recommendation;bindRecommendationButtons();
+}
+function latestUnderstandingMemo(id){for(let i=state.attempts.length-1;i>=0;i--){const a=state.attempts[i];if(a.questionId===id&&a.understandingMemo)return a.understandingMemo}return ""}
+function renderRecords(){
+ const rows=state.questions.filter(q=>pFor(q.id).attempts>0||pFor(q.id).manual).map(q=>{const p=pFor(q.id),status=p.uncertain?'<span class="status hold">이해 보류</span>':isUnresolved(q.id)?'<span class="status need">복습 필요</span>':p.wrong?'<span class="status done">숙달</span>':'<span class="status new">정답</span>',memo=latestUnderstandingMemo(q.id);return`<tr><td>${esc(q.chapter)}</td><td>${esc(sourceFor(q))}</td><td>${esc(q.number)}</td><td>${esc(q.type)}</td><td>${esc(q.concept)}</td><td>${p.correct} / ${p.attempts}</td><td>${p.streak}회</td><td>${status}</td><td>${memo?esc(memo):"—"}</td></tr>`}).join("");
+ document.getElementById("recordsTable").innerHTML=rows?`<table class="records"><thead><tr><th>단원</th><th>출처</th><th>번호</th><th>유형</th><th>세부 개념</th><th>정답/풀이</th><th>연속 정답</th><th>상태</th><th>이해 메모</th></tr></thead><tbody>${rows}</tbody></table>`:'<div class="empty">아직 기록된 문제가 없습니다.</div>'
+}
+function showNotice(id,msg){const el=document.getElementById(id);el.textContent=msg;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),4500)}
+function switchView(name){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===name+"View"));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===name));if(name==="dashboard")renderDashboard();if(name==="records")renderRecords()}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>switchView(b.dataset.view)));
+
+function startSession(){
+ const chapter=document.getElementById("chapterSelect").value,source=document.getElementById("sourceSelect").value,mode=document.getElementById("modeSelect").value,limit=+document.getElementById("limitSelect").value,allowed=q=>q.chapter===chapter&&(!source||sourceFor(q)===source);
+ let pool=state.questions.filter(allowed);
+ if(mode==="all")pool=balancedMixed(chapter,limit,source);
+ if(mode==="wrong")pool=pool.filter(q=>isUnresolved(q.id));
+ if(mode==="weak"){const weakTypes=[...new Set(pool.filter(q=>isUnresolved(q.id)).map(q=>q.type))];pool=pool.filter(q=>weakTypes.includes(q.type))}
+ if(mode==="variant"){const parents=pool.filter(q=>isUnresolved(q.id)).map(q=>q.id);pool=state.variants.filter(v=>parents.includes(v.parentId)&&(!source||sourceFor(v)===source))}
+ if(!pool.length){showNotice("setupNotice",mode==="all"?"출제할 문제가 없습니다.":"해당 조건의 문제가 없습니다. 먼저 문제를 풀거나 오답 번호를 등록하세요.");return}
+ session=(mode==="all"?pool:shuffle(pool).slice(0,limit));sessionIndex=0;sessionCorrect=0;answered=false;pendingAttempt=null;sessionStates=[];sessionDrafts=[];
+ document.getElementById("setupPanel").style.display="none";document.getElementById("sessionHead").classList.add("show");document.getElementById("sessionResult").classList.remove("show");renderQuestion()
+}
+function renderQuestion(){
+ const q=session[sessionIndex],card=document.getElementById("questionCard"),reviewed=sessionStates[sessionIndex],draft=sessionDrafts[sessionIndex]||{};answered=!!reviewed;
+ document.getElementById("sessionCount").textContent=`${sessionIndex+1} / ${session.length}`;document.getElementById("sessionBar").style.width=`${sessionIndex/session.length*100}%`;
+ card.className="panel question show";
+ const selectedIndex=reviewed?reviewed.selectedIndex:draft.selectedIndex,confidence=reviewed?reviewed.confidence:(draft.confidence||"sure"),understandingMemo=reviewed?(reviewed.understandingMemo||""):(draft.understandingMemo||"");
+ card.innerHTML=`<div class="qhead"><span class="qnum">QUESTION ${esc(q.number)}</span><div class="tags"><span class="tag">출처 · ${esc(sourceFor(q))}</span><span class="tag">${esc(q.type)}</span><span class="tag">${esc(q.concept)}</span>${q.variant?'<span class="tag variant">응용 변형</span>':""}</div></div><h3>${esc(q.q)}</h3>${q.case?`<div class="case">${esc(q.case)}</div>`:""}${questionTable(q.table)}<div class="options">${q.o.map((x,i)=>`<label class="option"><input type="radio" name="answer" value="${i}" ${selectedIndex===i?"checked":""}><span class="mark">${["①","②","③","④"][i]}</span><span>${esc(x)}</span></label>`).join("")}</div><div class="confidence"><span class="confidence-label">풀이 상태</span><label class="confidence-option"><input type="radio" name="confidence" value="sure" ${confidence==="sure"?"checked":""}> 확실함</label><label class="confidence-option"><input type="radio" name="confidence" value="unsure" ${confidence==="unsure"?"checked":""}> 헷갈림</label><label class="confidence-option"><input type="radio" name="confidence" value="guess" ${confidence==="guess"?"checked":""}> 찍음</label></div><div class="why"><b>정답 ${["①","②","③","④"][q.a]}.</b> ${esc(q.e)}</div><div class="qactions"><button class="btn soft" id="quitBtn">세션 끝내기</button><button class="btn soft" id="prevBtn" ${sessionIndex===0?"disabled":""}>← 이전 문제</button><button class="btn primary" id="checkBtn">${reviewed?(sessionIndex<session.length-1?"다음 문제":"결과 보기"):"정답 확인"}</button></div>`;
+ document.querySelector(".confidence").insertAdjacentHTML("afterend",`<div class="confidence-memo" id="confidenceMemo" ${confidence==="sure"?"hidden":""}><label for="confidenceMemoText">이해 메모 <span>선택</span></label><textarea id="confidenceMemoText" maxlength="200" placeholder="헷갈리거나 찍은 이유를 짧게 적어 주세요.">${esc(understandingMemo)}</textarea><p>헷갈림·찍음을 선택했을 때, 정답·오답과 관계없이 함께 저장됩니다.</p></div>`);
+ document.getElementById("checkBtn").insertAdjacentHTML("beforebegin",`<button class="btn accent" id="retryBtn" ${reviewed?"":"hidden"} ${pendingAttempt?"disabled":""}>다시 풀기</button>`);
+ document.getElementById("checkBtn").addEventListener("click",checkAnswer);document.getElementById("quitBtn").addEventListener("click",finishSession);document.getElementById("prevBtn").addEventListener("click",previousQuestion);document.getElementById("retryBtn").addEventListener("click",retryQuestion);
+ card.querySelectorAll('input[name="confidence"]').forEach(input=>input.addEventListener("change",()=>{document.getElementById("confidenceMemo").hidden=document.querySelector('input[name="confidence"]:checked')?.value==="sure"}));
+ card.insertAdjacentHTML("beforeend",'<div class="mistake-reason" id="mistakeReason" hidden><strong>오답 원인을 선택해 주세요</strong><div class="reason-actions"><button class="btn soft" data-reason="몰라서 틀림">몰라서 틀림</button><button class="btn soft" data-reason="실수로 틀림">실수로 틀림</button><button class="btn soft" data-reason="시간이 부족">시간이 부족</button></div></div>');
+ card.insertAdjacentHTML("beforeend",'<div class="understanding-note" id="understandingNote" hidden><strong>맞혔지만 ‘이해 보류’로 기록했습니다</strong><p>어느 부분이 이해되지 않았는지 짧게 남기면, 학습기록에서 다시 확인할 수 있습니다.</p><textarea id="understandingMemo" maxlength="200" placeholder="예: 선입선출법에서 매출총이익이 달라지는 이유"></textarea><div class="reason-actions"><button class="btn soft" id="skipUnderstandingMemo">메모 없이 계속</button><button class="btn primary" id="saveUnderstandingMemo">메모 저장</button></div></div>');
+ document.getElementById("understandingNote").innerHTML="<strong>이해 보류로 기록했습니다</strong><p>풀이 상태와 이해 메모가 학습기록에 저장되었습니다.</p>";
+ card.querySelectorAll("[data-reason]").forEach(b=>b.addEventListener("click",()=>saveMistakeReason(b.dataset.reason)))
+ if(reviewed){
+  card.classList.add("graded");card.querySelectorAll("input").forEach(i=>i.disabled=true);document.getElementById("confidenceMemoText").disabled=true;card.querySelectorAll(".option").forEach(o=>{const i=o.querySelector("input");o.classList.toggle("correct",+i.value===q.a);o.classList.toggle("wrong",i.checked&&+i.value!==q.a)})
+ }
+}
+function previousQuestion(){
+ if(pendingAttempt||sessionIndex===0)return;
+ const selected=document.querySelector('input[name="answer"]:checked'),confidence=document.querySelector('input[name="confidence"]:checked')?.value||"sure";
+ if(!answered)sessionDrafts[sessionIndex]={selectedIndex:selected?+selected.value:null,confidence,understandingMemo:document.getElementById("confidenceMemoText")?.value.trim()||""};sessionIndex--;renderQuestion()
+}
+function checkAnswer(){
+ if(answered){if(sessionIndex<session.length-1){sessionIndex++;renderQuestion()}else finishSession();return}
+ const q=session[sessionIndex],selected=document.querySelector('input[name="answer"]:checked');if(!selected)return;
+ answered=true;const actualCorrect=+selected.value===q.a,confidence=document.querySelector('input[name="confidence"]:checked')?.value||"sure",understandingMemo=confidence==="sure"?"":(document.getElementById("confidenceMemoText")?.value.trim()||""),understandingHold=actualCorrect&&confidence!=="sure",correct=actualCorrect&&!understandingHold,attemptId=`session-${Date.now()}-${Math.random().toString(36).slice(2)}`;if(correct)sessionCorrect++;sessionStates[sessionIndex]={selectedIndex:+selected.value,confidence,understandingMemo,actualCorrect,correct,understandingHold,attemptId};delete sessionDrafts[sessionIndex];
+ const recordId=q.parentId||q.id,p=pFor(recordId),at=new Date().toISOString();pendingAttempt={attemptId,questionId:recordId,servedId:q.id,chapter:q.chapter,source:sourceFor(q),type:q.type,concept:q.concept,correct,actualCorrect,confidence,understandingHold,understandingMemo,at,variant:!!q.variant};state.progress[recordId]=applyAttemptToProgress(p,pendingAttempt);
+ if(correct||understandingHold){state.attempts.push(pendingAttempt);pendingAttempt=null;save();if(understandingHold)document.getElementById("understandingNote").hidden=false}else{document.getElementById("mistakeReason").hidden=false;document.getElementById("checkBtn").disabled=true;document.getElementById("quitBtn").disabled=true;document.getElementById("prevBtn").disabled=true;document.getElementById("retryBtn").disabled=true}
+ const card=document.getElementById("questionCard");card.classList.add("graded");card.querySelectorAll("input").forEach(i=>i.disabled=true);document.getElementById("confidenceMemoText").disabled=true;document.getElementById("retryBtn").hidden=false;card.querySelectorAll(".option").forEach(o=>{const i=o.querySelector("input");o.classList.toggle("correct",+i.value===q.a);o.classList.toggle("wrong",i.checked&&+i.value!==q.a)});
+ document.getElementById("checkBtn").textContent=sessionIndex<session.length-1?"다음 문제":"결과 보기"
+}
+function saveMistakeReason(reason){if(!pendingAttempt)return;pendingAttempt.mistakeReason=reason;state.attempts.push(pendingAttempt);pendingAttempt=null;save();document.getElementById("mistakeReason").hidden=true;document.getElementById("checkBtn").disabled=false;document.getElementById("quitBtn").disabled=false;document.getElementById("prevBtn").disabled=sessionIndex===0;document.getElementById("retryBtn").disabled=false}
+function retryQuestion(){
+ if(pendingAttempt)return;
+ const reviewed=sessionStates[sessionIndex];if(!reviewed)return;
+ if(reviewed.attemptId){state.attempts=state.attempts.filter(a=>a.attemptId!==reviewed.attemptId);rebuildProgress();save()}
+ if(reviewed.correct)sessionCorrect=Math.max(0,sessionCorrect-1);
+ sessionStates[sessionIndex]=null;sessionDrafts[sessionIndex]={selectedIndex:reviewed.selectedIndex,confidence:reviewed.confidence,understandingMemo:reviewed.understandingMemo||""};answered=false;renderQuestion()
+}
+function finishSession(){
+ document.getElementById("questionCard").classList.remove("show");document.getElementById("sessionHead").classList.remove("show");
+ const r=document.getElementById("sessionResult");r.classList.add("show");const rate=session.length?Math.round(sessionCorrect/session.length*100):0;
+ r.innerHTML=`<p class="eyebrow">SESSION COMPLETE</p><div class="bigscore">${sessionCorrect} / ${session.length}</div><p>확실히 맞힌 정답률 ${rate}% · ‘헷갈림·찍음’ 정답은 이해 보류로 저장됩니다.</p><div class="result-actions"><button class="btn accent" id="reviewNow">남은 오답 풀기</button><button class="btn soft" id="backSetup">다른 학습 선택</button></div>`;
+ document.getElementById("backSetup").addEventListener("click",resetSession);document.getElementById("reviewNow").addEventListener("click",()=>{resetSession();document.getElementById("modeSelect").value="wrong";startSession()});renderDashboard();renderRecords()
+}
+function resetSession(){document.getElementById("sessionResult").classList.remove("show");document.getElementById("setupPanel").style.display="block"}
+document.getElementById("startBtn").addEventListener("click",startSession);
+document.getElementById("masteryCloseAll").addEventListener("click",()=>setAllMasteryFolders(false));
+document.getElementById("masteryOpenAll").addEventListener("click",()=>setAllMasteryFolders(true));
+document.getElementById("chapterSelect").addEventListener("change",()=>fillSourceSelect("sourceSelect",document.getElementById("chapterSelect").value));
+document.getElementById("manualChapter").addEventListener("change",()=>fillSourceSelect("manualSource",document.getElementById("manualChapter").value));
+document.getElementById("limitSelect").addEventListener("change",e=>{
+ const text=e.target.value==="10"?"권장 10문항은 기본문제 약 6개와 변형문제 약 4개를 섞어 핵심 이해도를 점검합니다.":e.target.value==="20"?"20문항은 기본문제와 변형문제를 넓게 풀어 보는 집중 점검용입니다.":e.target.value==="5"?"5문항은 짧은 복습용이며 단원 전체 이해도를 판단하기에는 부족할 수 있습니다.":"현재 단원에 등록된 기본문제와 변형문제를 모두 풉니다.";
+ document.getElementById("mixGuide").textContent=text
+});
+
+document.getElementById("manualAdd").addEventListener("click",()=>{
+ const chapter=document.getElementById("manualChapter").value,source=document.getElementById("manualSource").value,raw=document.getElementById("manualNumbers").value.trim(),nums=[...new Set(raw.split(/[,\s]+/).filter(Boolean).map(Number).filter(Number.isFinite))];
+ if(!source){showNotice("manualNotice","먼저 문제팩 출처를 선택하세요.");return}const qs=state.questions.filter(q=>q.chapter===chapter&&sourceFor(q)===source&&nums.includes(Number(q.number)));if(!qs.length){showNotice("manualNotice","등록할 수 있는 문제 번호가 없습니다.");return}
+ qs.forEach(q=>{const p=pFor(q.id);p.attempts++;p.wrong++;p.streak=0;p.manual=true;p.last=new Date().toISOString();state.progress[q.id]=p;state.attempts.push({questionId:q.id,servedId:q.id,chapter:q.chapter,source:sourceFor(q),type:q.type,concept:q.concept,correct:false,at:new Date().toISOString(),manual:true})});save();document.getElementById("manualNumbers").value="";renderRecords();renderDashboard();showNotice("manualNotice",`${qs.length}개 오답을 등록했습니다.`)
+});
+document.getElementById("printBtn").addEventListener("click",()=>window.print());
+document.querySelectorAll("[data-quick-action]").forEach(btn=>btn.addEventListener("click",()=>startQuickPractice(btn.dataset.quickAction,+btn.dataset.quickLimit)));
+document.getElementById("quickClose").addEventListener("click",closeQuickPractice);
+document.getElementById("quickModal").addEventListener("click",e=>{if(e.target===e.currentTarget)closeQuickPractice()});
+
+function safeName(name){return(name.trim()||"회계원리 학습기록").replace(/[\\/:*?"<>|]/g,"_")}
+document.getElementById("exportBtn").addEventListener("click",()=>{
+ const payload={format:"회계원리 학습센터 백업",version:APP_VERSION,encoding:"UTF-8",exportedAt:new Date().toISOString(),data:state};
+ const blob=new Blob(["\ufeff"+JSON.stringify(payload,null,2)],{type:"application/json;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=safeName(document.getElementById("backupName").value)+".json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);showNotice("backupNotice","JSON 백업 파일을 저장했습니다.")
+});
+async function readImport(){const f=document.getElementById("importFile").files[0];if(!f)throw new Error("먼저 JSON 파일을 선택하세요.");const text=(await f.text()).replace(/^\uFEFF/,""),obj=JSON.parse(text);if(obj.format!=="회계원리 학습센터 백업"||!obj.data)throw new Error("학습센터 백업 파일이 아닙니다.");return obj.data}
+document.getElementById("mergeBtn").addEventListener("click",async()=>{try{const incoming=await readImport();const qmap=new Map([...state.questions,...(incoming.questions||[])].map(q=>[q.id,q])),vmap=new Map([...state.variants,...(incoming.variants||[])].map(q=>[q.id,q]));state.questions=[...qmap.values()];state.variants=[...vmap.values()];const amap=new Map([...state.attempts,...(incoming.attempts||[])].map(a=>[[a.questionId,a.servedId,a.at,a.correct,a.manual].join("|"),a]));state.attempts=[...amap.values()];rebuildProgress();save();afterImport("기존 기록과 안전하게 합쳤습니다.")}catch(e){showNotice("backupNotice","복원 실패: "+e.message)}});
+document.getElementById("replaceBtn").addEventListener("click",async()=>{try{const incoming=await readImport();if(!confirm("현재 브라우저 기록을 지우고 선택한 백업 상태로 완전히 교체할까요?"))return;state=normalizeState(incoming);save();afterImport("백업 당시 상태로 교체했습니다.")}catch(e){showNotice("backupNotice","복원 실패: "+e.message)}});
+function afterImport(msg){fillChapters();renderDashboard();renderRecords();showNotice("backupNotice",msg)}
+
+document.getElementById("packImportBtn").addEventListener("click",async()=>{
+ try{
+  const file=document.getElementById("packFile").files[0];if(!file)throw new Error("먼저 문제팩 JSON을 선택하세요.");
+  const obj=JSON.parse((await file.text()).replace(/^\uFEFF/,""));if(obj.format!=="회계원리 학습센터 문제팩"||!Array.isArray(obj.questions))throw new Error("학습센터 문제팩 형식이 아닙니다.");
+  const packSource=String(obj.source||obj.packName||file.name.replace(/\.json$/i,"")||"가져온 문제팩").trim(),importedQuestions=obj.questions.map(q=>({...q,source:obj.source||obj.packName||q.source||packSource})),importedVariants=(obj.variants||[]).map(q=>({...q,source:obj.source||obj.packName||q.source||packSource})),incoming=[...importedQuestions,...importedVariants],ids=new Set([...state.questions,...importedQuestions].map(q=>q.id));
+  incoming.forEach(q=>{if(!q.id||!q.chapter||!q.type||!q.concept||!q.q||!Array.isArray(q.o)||q.o.length!==4||!Number.isInteger(q.a)||q.a<0||q.a>3||!q.e||!validQuestionTable(q.table))throw new Error(`문제 ${q.id||"(ID 없음)"}의 형식이 올바르지 않습니다.`)});
+  (obj.variants||[]).forEach(v=>{if(!v.parentId||!ids.has(v.parentId))throw new Error(`변형문제 ${v.id}의 원본 문제를 찾을 수 없습니다.`)});
+  state.questions=[...new Map([...state.questions,...importedQuestions].map(q=>[q.id,q])).values()];
+  state.variants=[...new Map([...state.variants,...importedVariants].map(q=>[q.id,q])).values()];save();fillChapters();renderDashboard();
+  showNotice("packNotice",`${obj.chapter||"새 단원"} · ${packSource} 문제팩을 추가했습니다: 기본 ${importedQuestions.length}문항, 변형 ${importedVariants.length}문항`)
+ }catch(e){showNotice("packNotice","문제팩 추가 실패: "+e.message)}
+});
+
+fillChapters();renderDashboard();renderRecords();
+</script>
+</body>
+</html>
