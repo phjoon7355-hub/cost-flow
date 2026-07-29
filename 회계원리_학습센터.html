@@ -10,16 +10,20 @@
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:radial-gradient(circle at 95% 0,rgba(219,107,79,.13),transparent 28rem),linear-gradient(180deg,#e8ece4,#f5f4ef 36rem,#eef0ea);font-family:"Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.6}button,input,select{font:inherit}
     .app{width:min(1180px,calc(100% - 28px));margin:auto;padding:24px 0 70px}.top{position:relative;overflow:hidden;padding:38px clamp(24px,5vw,58px);color:#fff;border-radius:26px;background:linear-gradient(130deg,var(--deep),#0c2d2a);box-shadow:var(--shadow)}.top:after{content:"✓";position:absolute;right:36px;bottom:-73px;color:rgba(255,255,255,.06);font:700 14rem Georgia,serif}.eyebrow{margin:0 0 8px;color:#f2c26c;font-size:.76rem;font-weight:900;letter-spacing:.17em}.top h1{margin:0;font:700 clamp(2.1rem,5vw,4.1rem)/1.08 Georgia,"Noto Serif KR",serif;letter-spacing:-.04em}.top p:not(.eyebrow){max-width:690px;margin:17px 0 0;color:#d6e5e2}.save-state{display:inline-flex;align-items:center;gap:7px;margin-top:19px;padding:6px 11px;border:1px solid rgba(255,255,255,.18);border-radius:99px;background:rgba(255,255,255,.07);font-size:.78rem}.dot{width:7px;height:7px;border-radius:50%;background:#7ed5ad;box-shadow:0 0 0 4px rgba(126,213,173,.13)}
     .nav{position:sticky;z-index:20;top:8px;display:flex;gap:7px;margin:18px 0;padding:8px;border:1px solid var(--line);border-radius:16px;background:rgba(255,254,250,.92);box-shadow:0 8px 28px rgba(28,51,48,.08);backdrop-filter:blur(12px)}.nav button{flex:1;padding:10px 12px;border:0;border-radius:10px;color:var(--sub);background:transparent;font-weight:850;cursor:pointer}.nav button.active{color:#fff;background:var(--deep)}.view{display:none}.view.active{display:block}
-    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.stat{padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--paper)}.stat span{display:block;color:var(--sub);font-size:.79rem}.stat strong{display:block;margin-top:5px;color:var(--deep);font:700 2rem Georgia,serif}.stat small{color:var(--sub)}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.stat{padding:20px;border:1px solid var(--line);border-radius:18px;background:var(--paper)}.stat>span{display:block;color:var(--sub);font-size:.79rem}.stat-value{display:flex;align-items:baseline;gap:10px;margin-top:5px}.stat strong{display:block;color:var(--deep);font:700 2rem Georgia,serif}.stat small{display:block;color:var(--sub);font-size:.76rem;line-height:1.45}.stat small b{font-weight:800}.stat-insight{display:block;margin-top:2px;color:#557069}.stat-delta{display:inline-flex;align-items:center;gap:3px;font-size:.78rem;font-style:normal;font-weight:900;white-space:nowrap}.stat-delta.good{color:var(--green)}.stat-delta.caution{color:var(--red)}.stat-delta.down{color:var(--blue)}.stat-delta.neutral{color:#76847e}
     .panel{margin-top:15px;padding:clamp(20px,4vw,34px);border:1px solid var(--line);border-radius:21px;background:var(--paper);box-shadow:0 8px 30px rgba(26,48,45,.045)}.panel h2{margin:0 0 6px;font-size:1.22rem}.panel>.desc{margin:0 0 20px;color:var(--sub);font-size:.9rem}.section-title{display:flex;justify-content:space-between;align-items:end;gap:12px}.pill{padding:4px 9px;color:var(--deep);border-radius:99px;background:var(--mint);font-size:.74rem;font-weight:800}
     .mastery{display:grid;gap:11px}.master-tools{display:flex;align-items:center;gap:7px}.master-tools .btn{padding:7px 10px;font-size:.76rem}.master-folder{overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#fff}.master-folder-head{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:9px;width:100%;padding:13px 15px;border:0;color:var(--ink);background:#f4f7f3;text-align:left;cursor:pointer}.master-folder-head:hover{background:#edf4ef}.folder-arrow{display:inline-grid;width:21px;height:21px;place-items:center;color:var(--deep);border-radius:50%;background:#dcebe5;font-size:.72rem;transition:transform .18s}.master-folder.open .folder-arrow{transform:rotate(90deg)}.folder-title{font-weight:900;letter-spacing:-.02em}.folder-score{color:var(--deep);font-weight:900}.folder-meta{color:var(--sub);font-size:.76rem}.master-folder-children{display:none;padding:6px 13px 10px}.master-folder.open .master-folder-children{display:grid;gap:8px}.master-row{display:grid;grid-template-columns:180px 1fr 62px;align-items:center;gap:12px;padding:3px 0;font-size:.86rem}.master-label{display:flex;align-items:center;gap:7px;min-height:30px}.master-label b{font-weight:850}.quick-type{width:100%;padding:0;border:0;color:inherit;background:transparent;text-align:left;font:inherit;font-weight:850;cursor:pointer}.quick-type:hover{text-decoration:underline;text-underline-offset:3px}.quick-type:focus-visible{outline:2px solid var(--deep);outline-offset:3px;border-radius:4px}.master-row.needs-review .master-label{padding:5px 7px 5px 9px;border:1px solid #f0bf83;border-radius:8px;background:linear-gradient(90deg,#fff1cf,#fffaf0);box-shadow:inset 4px 0 0 var(--orange)}.master-row.needs-review .master-label b,.master-row.needs-review .quick-type{color:#70351d}.master-row.watch .master-label b{color:#8a651d}.master-row.untried .master-label{color:#88938f}.master-row.untried .master-label:before{content:"";width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#c1c9c4}.meter{height:9px;overflow:hidden;border-radius:99px;background:#e2e5de}.meter i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--orange),var(--gold),var(--green))}.recommend-list{display:grid;gap:9px}.recommend-item{padding:13px 15px;border:1px solid #cfe0d9;border-radius:12px;background:var(--mint)}.recommend-item b{color:var(--deep)}.recommend-item p{margin:4px 0 0;color:#46635d;font-size:.86rem}.recommend-note{margin:12px 0 0;color:var(--sub);font-size:.83rem}.empty{padding:30px;color:var(--sub);border:1px dashed #cbd1ca;border-radius:15px;text-align:center}
-    .controls{display:flex;flex-wrap:wrap;gap:9px;align-items:end}.field{display:grid;gap:5px;min-width:180px;flex:1}.field label{color:var(--sub);font-size:.76rem;font-weight:800}.field input,.field select{width:100%;padding:11px 12px;color:var(--ink);border:1px solid var(--line);border-radius:10px;background:#fff}.btn{padding:11px 17px;border:0;border-radius:10px;font-weight:850;cursor:pointer;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.42;cursor:not-allowed;transform:none}.primary{color:#fff;background:var(--deep)}.accent{color:#fff;background:var(--orange)}.soft{color:var(--deep);background:#dfe8e5}.danger{color:var(--red);background:var(--redbg)}.study-guide{margin-top:18px;padding:18px;border:1px solid #cddfd7;border-radius:15px;background:linear-gradient(135deg,#f4faf6,#fffdf7)}.study-guide-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.study-guide h3{margin:0;color:var(--deep);font-size:1rem}.study-guide-lead{margin:5px 0 13px;color:#46635d;font-size:.86rem;font-weight:700}.guide-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0;padding:0;list-style:none;counter-reset:guide}.guide-steps li{position:relative;min-height:98px;padding:12px 11px 11px 42px;border:1px solid #dfe5dc;border-radius:11px;background:rgba(255,255,255,.8);counter-increment:guide}.guide-steps li:before{content:counter(guide);position:absolute;top:12px;left:11px;display:grid;width:22px;height:22px;place-items:center;color:#fff;border-radius:50%;background:var(--green);font-size:.74rem;font-weight:900}.guide-steps b{display:block;margin-bottom:3px;color:var(--deep);font-size:.84rem}.guide-steps span{display:block;color:var(--sub);font-size:.76rem;line-height:1.45}.guide-steps em{display:block;margin-bottom:3px;color:#724a1d;font-style:normal;font-weight:800}.guide-choices{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.guide-choice{padding:11px 13px;border-left:4px solid var(--gold);border-radius:9px;background:#fff8e9;color:#65533a;font-size:.8rem}.guide-choice strong{display:block;margin-bottom:3px;color:#70351d}.guide-choice p{margin:0;line-height:1.5}
-    .session-head{display:none;align-items:center;gap:12px;margin:15px 0;padding:13px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,254,250,.94)}.session-head.show{display:flex}.track{height:8px;flex:1;overflow:hidden;border-radius:99px;background:#dfe3dc}.bar{height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--orange),var(--gold));transition:.25s}.question{display:none}.question.show{display:block}.qhead{display:flex;justify-content:space-between;gap:12px}.qnum{color:var(--orange);font:700 1.1rem Georgia,serif}.tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px}.tag{padding:3px 8px;color:var(--deep);border-radius:99px;background:var(--mint);font-size:.7rem;font-weight:800}.variant{color:#7c4c13;background:#fff0d3}.question h3{margin:14px 0 20px;font-size:clamp(1.08rem,2.5vw,1.3rem);line-height:1.65}.case{margin:-5px 0 19px;padding:13px 16px;border-left:4px solid var(--gold);background:#fff5df;color:#624f30;font-size:.9rem}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.option{position:relative;display:flex;align-items:flex-start;gap:10px;padding:13px 14px;min-height:54px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer}.option input{position:absolute;opacity:0}.mark{display:grid;width:24px;height:24px;flex:0 0 24px;place-items:center;border:1px solid #bac2be;border-radius:50%;color:var(--sub);font-size:.75rem;font-weight:850}.option:has(input:checked){border-color:var(--green);background:var(--mint)}.option:has(input:checked) .mark{color:#fff;border-color:var(--green);background:var(--green)}.question.graded .option{cursor:default}.question.graded .option.correct{border-color:var(--green);background:#e3f3ec}.question.graded .option.wrong{border-color:var(--red);background:var(--redbg)}.why{display:none;margin-top:16px;padding:15px 17px;border-radius:12px;background:#f0f2ed;color:#50605d;font-size:.9rem}.question.graded .why{display:block}.why b{color:var(--deep)}.qactions{display:flex;justify-content:space-between;gap:10px;margin-top:17px}
+    .controls{display:flex;flex-wrap:wrap;gap:9px;align-items:end}.field{display:grid;gap:5px;min-width:180px;flex:1}.field label{color:var(--sub);font-size:.76rem;font-weight:800}.field input,.field select{width:100%;padding:11px 12px;color:var(--ink);border:1px solid var(--line);border-radius:10px;background:#fff}.btn{padding:11px 17px;border:0;border-radius:10px;font-weight:850;cursor:pointer;transition:.15s}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.42;cursor:not-allowed;transform:none}.primary{color:#fff;background:var(--deep)}.accent{color:#fff;background:var(--orange)}.soft{color:var(--deep);background:#dfe8e5}.danger{color:var(--red);background:var(--redbg)}.study-guide{margin-top:18px;padding:18px;border:1px solid #cddfd7;border-radius:15px;background:linear-gradient(135deg,#f4faf6,#fffdf7)}.study-guide-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.study-guide h3{margin:0;color:var(--deep);font-size:1.06rem}.study-guide-lead{margin:5px 0 13px;color:#46635d;font-size:.92rem;font-weight:700}.guide-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0;padding:0;list-style:none;counter-reset:guide}.guide-steps li{position:relative;min-height:98px;padding:12px 11px 11px 42px;border:1px solid #dfe5dc;border-radius:11px;background:rgba(255,255,255,.8);counter-increment:guide}.guide-steps li:before{content:counter(guide);position:absolute;top:12px;left:11px;display:grid;width:22px;height:22px;place-items:center;color:#fff;border-radius:50%;background:var(--green);font-size:.81rem;font-weight:900}.guide-steps b{display:block;margin-bottom:3px;color:var(--deep);font-size:.91rem}.guide-steps span{display:block;color:var(--sub);font-size:.83rem;line-height:1.45}.guide-steps em{display:block;margin-bottom:3px;color:#724a1d;font-style:normal;font-weight:800}.guide-choices{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.guide-choice{padding:11px 13px;border-left:4px solid var(--gold);border-radius:9px;background:#fff8e9;color:#65533a;font-size:.87rem}.guide-choice strong{display:block;margin-bottom:3px;color:#70351d}.guide-choice p{margin:0;line-height:1.5}
+    .session-head{display:none;align-items:center;gap:12px;margin:15px 0;padding:13px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,254,250,.94)}.session-head.show{display:flex}.track{height:8px;flex:1;overflow:hidden;border-radius:99px;background:#dfe3dc}.bar{height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--orange),var(--gold));transition:.25s}.question{display:none}.question.show{display:block}.qhead{display:flex;justify-content:space-between;gap:12px}.qnum{color:var(--orange);font:700 1.1rem Georgia,serif}.tags{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:5px}.tag{padding:3px 8px;color:var(--deep);border-radius:99px;background:var(--mint);font-size:.8125rem;font-weight:800}.variant{color:#7c4c13;background:#fff0d3}.question h3{margin:14px 0 20px;font-size:clamp(1.08rem,2.5vw,1.3rem);line-height:1.65}.case{margin:-5px 0 19px;padding:13px 16px;border-left:4px solid var(--gold);background:#fff5df;color:#624f30;font-size:.9375rem}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.option{position:relative;display:flex;align-items:flex-start;gap:10px;padding:13px 14px;min-height:54px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer}.option input{position:absolute;opacity:0}.mark{display:grid;width:24px;height:24px;flex:0 0 24px;place-items:center;border:1px solid #bac2be;border-radius:50%;color:var(--sub);font-size:.8125rem;font-weight:850}.option:has(input:checked){border-color:var(--green);background:var(--mint)}.option:has(input:checked) .mark{color:#fff;border-color:var(--green);background:var(--green)}.question.graded .option{cursor:default}.question.graded .option.correct{border-color:var(--green);background:#e3f3ec}.question.graded .option.wrong{border-color:var(--red);background:var(--redbg)}.why{display:none;margin-top:16px;padding:15px 17px;border-radius:12px;background:#f0f2ed;color:#50605d;font-size:1rem;line-height:1.7}.question.graded .why{display:block}.why b{color:var(--deep)}.qactions{display:flex;justify-content:space-between;gap:10px;margin-top:17px}
     .result{display:none;text-align:center}.result.show{display:block}.bigscore{color:var(--deep);font:700 clamp(3rem,8vw,5rem)/1 Georgia,serif}.result p{color:var(--sub)}.result-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}.mistake-reason,.understanding-note{margin-top:16px;padding:15px 17px;border:1px solid #f0bf83;border-radius:12px;background:#fff8e9}.mistake-reason strong,.understanding-note strong{display:block;margin-bottom:9px;color:#70351d}.understanding-note p{margin:0;color:#725641;font-size:.9rem}.reason-actions{display:flex;flex-wrap:wrap;gap:8px}.reason-actions .btn{flex:1;min-width:150px}.confidence{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:#f7f8f4}.confidence-label{font-size:.82rem;font-weight:800;color:var(--sub);margin-right:3px}.confidence-option{display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid transparent;border-radius:8px;cursor:pointer;font-size:.88rem;font-weight:700}.confidence-option:has(input:checked){background:#e1f0eb;border-color:#a7cec0;color:var(--deep)}.confidence-option input{accent-color:var(--deep)}.confidence-memo{margin-top:10px;padding:12px 13px;border:1px solid #d7b77e;border-radius:11px;background:#fffdf7}.confidence-memo label{display:block;color:#70351d;font-size:.84rem;font-weight:850}.confidence-memo label span{color:var(--sub);font-size:.75rem;font-weight:600}.confidence-memo textarea{display:block;box-sizing:border-box;width:100%;min-height:68px;resize:vertical;margin-top:7px;padding:9px 10px;border:1px solid #d7b77e;border-radius:8px;font:inherit;font-size:.88rem;background:#fff}.confidence-memo p{margin:5px 0 0;color:#725641;font-size:.76rem}.question-table-wrap{margin:14px 0 18px;overflow-x:auto;border:1px solid #cad8d2;border-radius:12px;background:#fff}.question-table{width:100%;min-width:520px;border-collapse:collapse;font-size:.92rem}.question-table th,.question-table td{padding:11px 14px;border-bottom:1px solid #dce5df;text-align:center;white-space:nowrap}.question-table th{color:#314d46;background:#edf5f0;font-weight:900}.question-table tbody tr:last-child td{border-bottom:0}.question-table tbody tr:nth-child(even){background:#fbfcfa}.status.hold{color:#80550b;background:#fff0d2}.quick-modal{position:fixed;z-index:50;inset:0;display:grid;place-items:center;padding:18px;background:rgba(13,37,34,.45);backdrop-filter:blur(3px)}.quick-modal[hidden]{display:none}.quick-dialog{position:relative;width:min(560px,100%);padding:clamp(22px,5vw,30px);border:1px solid rgba(255,255,255,.6);border-radius:20px;background:var(--paper);box-shadow:0 24px 60px rgba(0,0,0,.22)}.quick-close{position:absolute;top:13px;right:13px;width:32px;height:32px;padding:0;border:0;border-radius:50%;color:var(--sub);background:#edf0e9;font-size:1.25rem;cursor:pointer}.quick-dialog h3{margin:0;color:var(--deep);font-size:1.3rem}.quick-dialog .eyebrow{margin-bottom:4px;color:var(--orange)}.quick-dialog p{margin:5px 0;color:var(--sub);font-size:.88rem}.quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:17px}.quick-action{min-height:90px;padding:13px;border:1px solid #cddfd7;border-radius:12px;color:var(--deep);background:#f7fbf8;text-align:left;font:inherit;cursor:pointer}.quick-action:hover:not(:disabled){border-color:var(--green);background:#e7f2ec}.quick-action:disabled{opacity:.45;cursor:not-allowed}.quick-action b{display:block;font-size:.9rem}.quick-action small{display:block;margin-top:4px;color:var(--sub);font-size:.76rem}.quick-action.recommended{border-color:#e6ae48;background:#fff8e8}.quick-note{margin-top:12px!important;padding:10px 12px;border-radius:9px;background:#f0f2ed;color:#50605d!important;font-size:.8rem!important}
     .records{width:100%;border-collapse:collapse;font-size:.86rem}.records th,.records td{padding:11px 9px;border-bottom:1px solid var(--line);text-align:left}.records th{color:var(--sub);font-size:.75rem}.status{display:inline-block;padding:3px 8px;border-radius:99px;font-size:.72rem;font-weight:850}.need{color:var(--red);background:var(--redbg)}.done{color:var(--green);background:var(--mint)}.new{color:var(--blue);background:#e5eef6}
     .manual{display:flex;flex-wrap:wrap;gap:9px}.manual input{flex:2;min-width:220px;padding:11px 12px;border:1px solid var(--line);border-radius:10px}.notice{display:none;margin-top:12px;padding:11px 14px;border-radius:10px;background:var(--mint);color:var(--deep);font-size:.85rem}.notice.show{display:block}.backup-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.drop{padding:23px;border:1px dashed #aebbb6;border-radius:15px;background:#fafbf8;text-align:center}.drop input{max-width:100%}.warning{padding:13px 15px;border-left:4px solid var(--orange);background:var(--redbg);color:#69443d;font-size:.87rem}.footer{margin-top:26px;color:var(--sub);font-size:.77rem;text-align:center}
     @media(max-width:780px){.app{width:min(100% - 18px,1180px);padding-top:9px}.top{padding:33px 22px;border-radius:19px}.nav{overflow:auto}.nav button{min-width:95px}.grid{grid-template-columns:1fr 1fr}.scope{grid-template-columns:1fr 1fr}.options{grid-template-columns:1fr}.section-title{align-items:flex-start;flex-direction:column}.master-tools{align-self:flex-end}.master-row{grid-template-columns:135px 1fr 52px;gap:8px}.master-label{align-items:flex-start;flex-direction:column;gap:2px}.master-row.needs-review .master-label{padding:5px 6px 5px 8px}.master-folder-head{grid-template-columns:auto 1fr auto;gap:7px}.folder-meta{grid-column:2 / -1;grid-row:2}.backup-grid,.guide-choices,.quick-actions{grid-template-columns:1fr}.guide-steps{grid-template-columns:1fr}.guide-steps li{min-height:auto}.records{display:block;overflow-x:auto}.qactions{flex-wrap:wrap}}@media print{.top,.nav,.controls,.qactions,.footer{display:none!important}.view{display:none!important}#recordsView{display:block!important}.panel{box-shadow:none}}
-    .recommend-item{width:100%;text-align:left;font:inherit;cursor:pointer;transition:.15s}.recommend-item:hover{border-color:var(--green);background:#e7f2ec;transform:translateY(-1px)}.recommend-item:focus-visible{outline:3px solid #e6ae48;outline-offset:3px}
+    .recommend-item{width:100%;text-align:left;font:inherit;cursor:pointer;transition:.15s}.recommend-item:hover{border-color:var(--green);background:#e7f2ec;transform:translateY(-1px)}.recommend-item:focus-visible{outline:3px solid #e6ae48;outline-offset:3px}.master-folder-head{grid-template-columns:auto 1fr auto auto auto}.folder-delta{font-size:.78rem;font-weight:900;white-space:nowrap}.folder-delta.up{color:#d94235}.folder-delta.down{color:#52718a}.folder-delta.flat,.folder-delta.new{color:#76847e}.folder-meta .today-count{color:#8a651d;font-weight:850}.top-dashboard-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.top-dashboard-grid .panel{margin-top:15px}.today-goal{padding:15px;border:1px solid #d8d4ad;border-radius:13px;background:linear-gradient(135deg,#fffdf4,#f8fbf7)}.goal-kicker{margin:0;color:#8a651d;font-size:.76rem;font-weight:900;letter-spacing:.04em}.today-goal h3{margin:4px 0 7px;color:var(--deep);font-size:1.05rem}.goal-unit-highlight{color:var(--blue);font-size:1.5em}.goal-progress{display:flex;align-items:center;justify-content:center;gap:9px;margin:8px 0;text-align:center}.goal-progress strong{color:#d94235;font:700 2.4rem Georgia,serif}.goal-progress span{color:#46635d;font-size:.82rem;font-weight:800}.goal-status{margin:8px 0 0;padding:9px 11px;border-radius:9px;background:#eff5f1;color:#46635d;font-size:.82rem}.goal-status.ahead{background:#e4f2ea;color:#17604c}.goal-status.behind{background:#fff0e2;color:#8a3e22}.goal-routine{margin:10px 0 0;color:#50605d;font-size:.8rem;line-height:1.55}.plan-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin:18px 0}.plan-stat{padding:15px 16px;border:1px solid #d4e0da;border-radius:14px;background:#f6faf7}.plan-stat span{display:block;color:var(--sub);font-size:.77rem;font-weight:800}.plan-stat strong{display:block;margin-top:5px;color:var(--deep);font:700 1.45rem Georgia,serif}.plan-stat small{display:block;margin-top:3px;color:#557069;font-size:.76rem}.plan-auto{margin:0 0 15px;padding:12px 14px;border-radius:11px;background:#f0f5f2;color:#46635d;font-size:.86rem}.plan-auto b{color:var(--deep)}.plan-timeline{display:grid;gap:10px;margin:0;padding:0;list-style:none}.plan-step{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:13px;padding:15px;border:1px solid var(--line);border-radius:14px;background:#fff}.plan-step.done{border-color:#a6d0bf;background:#f0faf5}.plan-check{display:grid;width:25px;height:25px;place-items:center}.plan-check input{width:18px;height:18px;accent-color:var(--green);cursor:pointer}.plan-step h3{margin:0;color:var(--deep);font-size:1rem}.plan-step p{margin:4px 0 0;color:var(--sub);font-size:.84rem;line-height:1.5}.plan-period{display:grid;justify-items:end;gap:4px;text-align:right}.plan-period b{color:#70351d;font-size:.84rem}.plan-period span{padding:3px 7px;border-radius:99px;background:#edf2ee;color:#587068;font-size:.72rem;font-weight:850}.plan-period span.now{color:#7a4b13;background:#fff0d3}.plan-period span.done{color:#17604c;background:#dff0e8}.plan-note{margin:15px 0 0;color:var(--sub);font-size:.8rem}.top{padding:20px clamp(22px,4vw,42px);border-radius:19px}.top:after{display:none}.eyebrow{margin-bottom:3px}.top h1{font-size:clamp(1.9rem,4vw,2.8rem)}.top p:not(.eyebrow){display:none}.save-state{margin-top:9px}@media(max-width:780px){.master-folder-head{grid-template-columns:auto 1fr auto auto}.folder-meta{grid-column:2 / -1;grid-row:2}.top-dashboard-grid{grid-template-columns:1fr}.plan-summary{grid-template-columns:1fr 1fr}.plan-step{grid-template-columns:auto 1fr}.plan-period{grid-column:2;text-align:left;justify-items:start}}
+    /* 문제의 자료·조건 상자에서 줄바꿈과 항목 기호를 그대로 표시한다. */
+    .case{line-height:1.7;white-space:pre-line}.dashboard-summary{margin-top:15px}.recommend-focus{padding:17px 18px;border:1px solid #cfe0d9;border-radius:13px;background:linear-gradient(135deg,#f8fcf9,#eaf5f0)}.recommend-kicker{margin:0;color:#8a651d;font-size:.76rem;font-weight:900;letter-spacing:.02em}.recommend-focus h3{margin:4px 0 5px;color:var(--deep);font-size:1.08rem}.recommend-focus h3 b{color:#c34d39}.recommend-reason{margin:0 0 12px;color:#46635d;font-size:.86rem}.recommend-focus .btn{padding:9px 13px;font-size:.88rem}.recommend-focus .recommend-note{margin:10px 0 0;color:#63736e;font-size:.77rem;line-height:1.45}
+    .review-guide{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.review-slot{display:flex;flex-direction:column;min-height:174px;padding:14px;border:1px solid #cfe0d9;border-radius:13px;background:linear-gradient(145deg,#fbfdfb,#eff7f2)}.review-slot.now{border-color:#efc083;background:linear-gradient(145deg,#fffaf0,#fff2dd)}.review-slot-head{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.review-slot h3{margin:0;color:var(--deep);font-size:1rem}.review-slot.now h3{color:#76391e}.review-stage-desc{margin:2px 0 0;color:#5f716d;font-size:.82rem;line-height:1.45}.review-slot-count{padding:3px 7px;color:#46635d;border-radius:99px;background:#fff;font-size:.76rem;font-weight:850;white-space:nowrap}.review-choice-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.review-choice{display:flex;flex:1 1 150px;align-items:center;justify-content:space-between;gap:7px;padding:9px 10px;border:1px solid #aacbbd;border-radius:9px;color:var(--deep);background:#fff;text-align:left;font:inherit;font-size:.84rem;font-weight:850;cursor:pointer;transition:.15s}.review-slot.now .review-choice{border-color:#edc183}.review-choice:hover{border-color:var(--green);background:#e6f2eb;transform:translateY(-1px)}.review-slot.now .review-choice:hover{background:#fff0d8}.review-choice small{color:#59706a;font-size:.74rem;font-weight:700;white-space:nowrap}.review-empty{margin:auto 0 0;padding-top:13px;color:var(--sub);font-size:.84rem;line-height:1.5}.review-complete{margin:auto 0 0;padding-top:13px;color:#17604c;font-size:.84rem;font-weight:800;line-height:1.5}.review-more{margin-top:8px;color:#587068;font-size:.8rem}.review-more summary{cursor:pointer;font-weight:800}.review-more .review-choice-list{margin-top:7px}.review-guide-note{grid-column:1/-1;margin:2px 0 0;color:#63736e;font-size:.8rem;line-height:1.5}.guide-complete{margin:14px 0 0;padding:10px 12px;border-radius:10px;background:#e4f2ea;color:#17604c;font-size:.9rem;font-weight:800}
+    @media(max-width:780px){.review-guide{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -31,28 +35,42 @@
     <span class="save-state"><i class="dot"></i> 이 브라우저에 자동 저장 중</span>
   </header>
 
-  <div class="panel top-recommendation">
-    <h2>추천 복습</h2><p class="desc">단원별로 복습이 필요한 문항과 핵심 개념을 확인합니다.</p>
-    <div id="recommendation" class="empty">아직 풀이 기록이 없습니다. 첫 문제를 풀어 보세요.</div>
+  <div class="top-dashboard-grid">
+    <section class="panel top-recommendation">
+      <h2>복습 안내</h2><p class="desc">유형별 숙달도와 함께 보고, 오늘의 복습 순서를 직접 고르세요.</p>
+      <div id="recommendation" class="empty">아직 풀이 기록이 없습니다. 첫 문제를 풀어 보세요.</div>
+    </section>
+    <section class="panel today-goal-panel">
+      <h2>오늘 나갈 진도</h2><p class="desc">10월 3일 시험 목표에 맞춘 최소 새 진도입니다.</p>
+      <div id="todayGoal" class="empty">학습 계획을 계산하고 있습니다.</div>
+    </section>
   </div>
 
   <nav class="nav" aria-label="주요 메뉴">
     <button class="active" data-view="dashboard">학습 현황</button>
     <button data-view="practice">문제 풀기</button>
+    <button data-view="plan">학습 계획</button>
     <button data-view="records">오답노트</button>
     <button data-view="backup">백업·복원</button>
   </nav>
 
   <section class="view active" id="dashboardView">
-    <div class="grid">
-      <div class="stat"><span>누적 풀이</span><strong id="totalAttempts">0</strong><small>회</small></div>
-      <div class="stat"><span>누적 정답률</span><strong id="accuracy">—</strong><small>전체 기록</small></div>
-      <div class="stat"><span>복습 필요</span><strong id="unresolved">0</strong><small>문항</small></div>
-      <div class="stat"><span>숙달 완료</span><strong id="mastered">0</strong><small>연속 2회 정답</small></div>
-    </div>
     <div class="panel">
       <div class="section-title"><div><h2>유형별 숙달도</h2><p class="desc">단원별 폴더를 열어 세부 유형의 정답률을 확인합니다. 주황색 강조 표시는 정답률 70% 미만인 유형입니다.</p></div><div class="master-tools"><button class="btn soft" id="masteryCloseAll" type="button">모두 닫기</button><button class="btn soft" id="masteryOpenAll" type="button">모두 보기</button><span class="pill">자동 분석</span></div></div>
       <div class="mastery" id="masteryChart"></div>
+    </div>
+    <div class="grid dashboard-summary">
+      <div class="stat"><span>누적 풀이</span><div class="stat-value"><strong id="totalAttempts">0</strong><em class="stat-delta neutral" id="totalAttemptsDelta">오늘 기록 없음</em></div><small><b>회</b><span class="stat-insight" id="totalAttemptsInsight">문제를 푼 누적 횟수예요.</span></small></div>
+      <div class="stat"><span>누적 정답률</span><div class="stat-value"><strong id="accuracy">—</strong><em class="stat-delta neutral" id="accuracyDelta">오늘 기록 없음</em></div><small><b>전체 기록</b><span class="stat-insight" id="accuracyInsight">높을수록 확실히 이해한 문제가 많아요.</span></small></div>
+      <div class="stat"><span>복습 필요</span><div class="stat-value"><strong id="unresolved">0</strong><em class="stat-delta neutral" id="unresolvedDelta">오늘 기록 없음</em></div><small><b>문항</b><span class="stat-insight" id="unresolvedInsight">다시 확인할 문제예요.</span></small></div>
+      <div class="stat"><span>숙달 완료</span><div class="stat-value"><strong id="mastered">0</strong><em class="stat-delta neutral" id="masteredDelta">오늘 기록 없음</em></div><small><b>연속 2회 정답</b><span class="stat-insight" id="masteredInsight">틀린 뒤 2회 연속 정답이에요.</span></small></div>
+    </div>
+  </section>
+
+  <section class="view" id="planView">
+    <div class="panel">
+      <div class="section-title"><div><h2>학습 계획</h2><p class="desc">10월 3일 시험까지의 이론·실무·기출 목표입니다. 학습센터의 실제 풀이 기록이 자동으로 반영됩니다.</p></div><span class="pill">자동 반영</span></div>
+      <div id="studyPlan"></div>
     </div>
   </section>
 
@@ -158,13 +176,13 @@
       <p class="quick-note" id="quickNote">추천 순서: 틀린 문제만 → 취약 유형 집중 → 변형문제 → 통합 전체 점검</p>
     </div>
   </div>
-<p class="footer">회계원리 학습센터 v2.3 · 모든 데이터는 사용자의 브라우저와 사용자가 저장한 JSON 파일에만 보관됩니다.</p>
+<p class="footer">회계원리 학습센터 v3.4 · 모든 데이터는 사용자의 브라우저와 사용자가 저장한 JSON 파일에만 보관됩니다.</p>
 </main>
 
 <script>
 "use strict";
 const APP_KEY="accountingStudyCenter_v1";
-const APP_VERSION="2.3";
+const APP_VERSION="3.4";
 const baseQuestions=[
  {id:"BASIC-001",chapter:"기초이론",number:1,type:"회계의 기본가정",concept:"기간별보고",q:"12월 31일 결산법인이 아직 사용하지 않은 보험료를 선급비용으로 조정하였다. 이러한 기말결산정리가 필요한 가장 직접적인 근거는?",o:["기업실체의 가정","기간별보고의 가정","화폐단위의 가정","기업소유주의 가정"],a:1,e:"계속되는 기업활동을 일정한 기간으로 나누어 보고하기 때문에 각 기간에 귀속될 수익과 비용을 결산 때 조정합니다."},
  {id:"BASIC-002",chapter:"기초이론",number:2,type:"회계의 기본가정",concept:"기업실체",q:"개인기업의 대표가 가족여행 비용을 사업용 카드로 결제했다. 회계담당자가 이를 대표자 인출금으로 처리한 근거가 되는 가정은?",o:["계속기업의 가정","기간별보고의 가정","기업실체의 가정","발생주의 가정"],a:2,e:"회계상 기업과 소유주는 별개의 실체이므로 소유주의 사적 지출은 기업의 비용이 아닙니다."},
@@ -194,13 +212,14 @@ const variantQuestions=[
  {id:"BASIC-V012",parentId:"BASIC-012",chapter:"기초이론",number:"V12",type:"회계절차",concept:"발생주의",variant:true,q:"12월분 급여 3,000,000원을 다음 해 1월에 지급한다. 12월 결산 시 필요한 처리는?",o:["아무 처리도 하지 않는다.","급여와 미지급비용을 인식한다.","선급비용을 인식한다.","1월 급여비용으로만 인식한다."],a:1,e:"현금 지급 전이라도 12월에 근로용역을 제공받았으므로 급여비용과 미지급비용을 인식합니다."}
 ];
 
-function freshState(){return{version:APP_VERSION,questions:baseQuestions,variants:variantQuestions,progress:{},attempts:[],settings:{masteryStreak:2}}}
+function freshState(){return{version:APP_VERSION,questions:baseQuestions,variants:variantQuestions,excludedQuestionIds:[],progress:{},attempts:[],settings:{masteryStreak:2,reviewGuide:{version:1,chapters:{}}}}}
 function normalizeState(s){
+ const excluded=new Set(s.excludedQuestionIds||[]);
  const qmap=new Map([...(s.questions||[]),...baseQuestions].map(q=>[q.id,q])),vmap=new Map([...(s.variants||[]),...variantQuestions].map(q=>[q.id,q]));
- s.questions=[...qmap.values()];s.variants=[...vmap.values()];s.progress=s.progress||{};s.attempts=s.attempts||[];s.settings=s.settings||{masteryStreak:2};s.version=APP_VERSION;return s
+ s.questions=[...qmap.values()].filter(q=>!excluded.has(q.id));s.variants=[...vmap.values()].filter(q=>!excluded.has(q.id));s.excludedQuestionIds=[...excluded];s.attempts=(s.attempts||[]).filter(a=>!excluded.has(a.questionId)&&!excluded.has(a.servedId));s.settings={masteryStreak:2,...(s.settings||{})};s.settings.reviewGuide=s.settings.reviewGuide&&typeof s.settings.reviewGuide==="object"?s.settings.reviewGuide:{version:1,chapters:{}};s.progress=excluded.size?progressFromAttempts(s.attempts,s.settings.masteryStreak||2):(s.progress||{});s.version=APP_VERSION;return s
 }
 function loadState(){try{const s=JSON.parse(localStorage.getItem(APP_KEY));if(s&&s.progress&&Array.isArray(s.questions))return normalizeState(s)}catch(e){}return freshState()}
-let state=loadState(),session=[],sessionIndex=0,sessionCorrect=0,answered=false,pendingAttempt=null,sessionStates=[],sessionDrafts=[],quickTarget=null;
+let state=loadState(),session=[],sessionIndex=0,sessionCorrect=0,answered=false,pendingAttempt=null,sessionStates=[],sessionDrafts=[],quickTarget=null,guideSession=null;
 function save(){localStorage.setItem(APP_KEY,JSON.stringify(state))}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function questionTable(table){
@@ -220,26 +239,30 @@ function pFor(id){return state.progress[id]||{attempts:0,correct:0,wrong:0,strea
 function isUnresolved(id){const p=pFor(id);return!!p.uncertain||(p.wrong>0&&p.streak<(state.settings.masteryStreak||2))}
 function shuffle(a){return[...a].sort(()=>Math.random()-.5)}
 function balancedMixed(chapter,limit,source=""){
- const allowed=q=>q.chapter===chapter&&(!source||sourceFor(q)===source),bases=shuffle(state.questions.filter(allowed)),vars=state.variants.filter(allowed);
+ const allowed=q=>q.chapter===chapter&&(!source||sourceFor(q)===source),bases=state.questions.filter(allowed),vars=state.variants.filter(allowed);
  if(limit>=999)return shuffle([...bases,...vars]);
  const byParent=new Map();vars.forEach(v=>{if(!byParent.has(v.parentId))byParent.set(v.parentId,[]);byParent.get(v.parentId).push(v)});
- const firstCount=Math.min(limit,bases.length),variantTarget=Math.min(vars.length,Math.round(firstCount*.4)),selected=[];
- bases.forEach((b,i)=>{const choices=byParent.get(b.id)||[];selected.push(i<variantTarget&&choices.length?shuffle(choices)[0]:b)});
- const chosen=new Set(selected.map(q=>q.id)),rest=shuffle([...bases,...vars].filter(q=>!chosen.has(q.id)));
- return[...selected,...rest].slice(0,limit)
+ const byType=new Map();bases.forEach(b=>{if(!byType.has(b.type))byType.set(b.type,[]);byType.get(b.type).push(b)});
+ [...byType.values()].forEach(items=>{const mixed=shuffle(items);items.splice(0,items.length,...mixed)});
+ const types=shuffle([...byType.keys()]),firstCount=Math.min(limit,bases.length),parents=[];
+ while(parents.length<firstCount){let added=false;types.forEach(type=>{const items=byType.get(type);if(parents.length<firstCount&&items?.length){parents.push(items.shift());added=true}});if(!added)break}
+ const possible=shuffle(parents.map((b,i)=>({b,i})).filter(({b})=>(byParent.get(b.id)||[]).length));
+ const variantTarget=Math.min(possible.length,Math.round(parents.length*.4)),variantIndexes=new Set(possible.slice(0,variantTarget).map(({i})=>i));
+ return parents.map((b,i)=>variantIndexes.has(i)?shuffle(byParent.get(b.id))[0]:b)
 }
-function applyAttemptToProgress(p,a){
- const actualCorrect=typeof a.actualCorrect==="boolean"?a.actualCorrect:!!a.correct,hold=!!a.understandingHold||a.confidence==="unsure"||a.confidence==="guess";
- p.attempts++;
- if(a.correct){p.correct++;p.streak++;if(p.uncertain&&p.streak>=(state.settings.masteryStreak||2))p.uncertain=false}
- else{if(!actualCorrect)p.wrong++;if(hold)p.uncertain=true;p.streak=0}
- p.last=a.at||new Date().toISOString();p.manual=p.manual||!!a.manual;return p
+function applyAttemptToProgress(p,a,masteryStreak=2){
+  const actualCorrect=typeof a.actualCorrect==="boolean"?a.actualCorrect:!!a.correct,hold=!!a.understandingHold||a.confidence==="unsure"||a.confidence==="guess";
+  p.attempts++;
+  if(a.correct){p.correct++;p.streak++;if(p.uncertain&&p.streak>=masteryStreak)p.uncertain=false}
+  else{if(!actualCorrect)p.wrong++;if(hold)p.uncertain=true;p.streak=0}
+  p.last=a.at||new Date().toISOString();p.manual=p.manual||!!a.manual;return p
 }
-function rebuildProgress(){
- const rebuilt={};
- [...state.attempts].sort((a,b)=>String(a.at).localeCompare(String(b.at))).forEach(a=>{const p=rebuilt[a.questionId]||{attempts:0,correct:0,wrong:0,streak:0,last:null,manual:false,uncertain:false};rebuilt[a.questionId]=applyAttemptToProgress(p,a)});
- state.progress=rebuilt
+function progressFromAttempts(attempts,masteryStreak=2){
+  const rebuilt={};
+  [...attempts].sort((a,b)=>String(a.at).localeCompare(String(b.at))).forEach(a=>{const p=rebuilt[a.questionId]||{attempts:0,correct:0,wrong:0,streak:0,last:null,manual:false,uncertain:false};rebuilt[a.questionId]=applyAttemptToProgress(p,a,masteryStreak)});
+  return rebuilt
 }
+function rebuildProgress(){state.progress=progressFromAttempts(state.attempts,state.settings.masteryStreak||2);syncReviewGuide()}
 
 function fillChapters(){
  const opts=chapters().map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join("");
@@ -258,13 +281,19 @@ function setAllMasteryFolders(open){
 function bindQuickTypeButtons(){
  document.querySelectorAll("[data-quick-chapter]").forEach(btn=>btn.addEventListener("click",()=>openQuickPractice(btn.dataset.quickChapter,btn.dataset.quickType)))
 }
-function bindRecommendationButtons(){
- document.querySelectorAll("[data-recommend-chapter]").forEach(btn=>btn.addEventListener("click",()=>startRecommendedReview(btn.dataset.recommendChapter)))
+function bindReviewGuideButtons(){
+ document.querySelectorAll("[data-review-guide-chapter]").forEach(btn=>btn.addEventListener("click",()=>startReviewGuide(btn.dataset.reviewGuideChapter,btn.dataset.reviewGuideStage)))
 }
-function startRecommendedReview(chapter){
- const pending=state.questions.filter(q=>q.chapter===chapter&&isUnresolved(q.id));if(!pending.length){renderDashboard();return}
- document.getElementById("chapterSelect").value=chapter;fillSourceSelect("sourceSelect",chapter);document.getElementById("sourceSelect").value="";document.getElementById("modeSelect").value="wrong";document.getElementById("limitSelect").value="999";
- switchView("practice");startSession()
+function startReviewGuide(chapter,stage){
+ const stageId=String(stage),scheduled=stageId!=="now";
+ let pool=[];
+ if(scheduled){
+  const entry=reviewGuideEntries().find(item=>item.chapter===chapter);if(!entry||entry.stage!==Number(stageId)||!entry.due){renderDashboard();return}pool=scheduledReviewPool(chapter)
+ }else pool=state.questions.filter(q=>q.chapter===chapter&&isUnresolved(q.id));
+ if(!pool.length){renderDashboard();return}
+ document.getElementById("chapterSelect").value=chapter;fillSourceSelect("sourceSelect",chapter);document.getElementById("sourceSelect").value="";document.getElementById("modeSelect").value=scheduled?"all":"wrong";document.getElementById("limitSelect").value="5";
+ guideSession=scheduled?{chapter,stage:Number(stageId)}:null;session=scheduled?pool:shuffle(pool).slice(0,5);sessionIndex=0;sessionCorrect=0;answered=false;pendingAttempt=null;sessionStates=[];sessionDrafts=[];
+ switchView("practice");document.getElementById("setupPanel").style.display="none";document.getElementById("sessionHead").classList.add("show");document.getElementById("sessionResult").classList.remove("show");renderQuestion()
 }
 function quickBaseQuestions(){return quickTarget?state.questions.filter(q=>q.chapter===quickTarget.chapter&&q.type===quickTarget.type):[]}
 function quickPool(mode){
@@ -285,29 +314,180 @@ function closeQuickPractice(){const modal=document.getElementById("quickModal");
 function startQuickPractice(mode,limit){
  const pool=quickPool(mode);if(!pool.length)return;
  const chapter=quickTarget.chapter;closeQuickPractice();document.getElementById("chapterSelect").value=chapter;fillSourceSelect("sourceSelect",chapter);document.getElementById("sourceSelect").value="";document.getElementById("modeSelect").value=mode;document.getElementById("limitSelect").value=String(limit);
- session=shuffle(pool).slice(0,limit);sessionIndex=0;sessionCorrect=0;answered=false;pendingAttempt=null;sessionStates=[];sessionDrafts=[];
+ guideSession=null;session=shuffle(pool).slice(0,limit);sessionIndex=0;sessionCorrect=0;answered=false;pendingAttempt=null;sessionStates=[];sessionDrafts=[];
  switchView("practice");document.getElementById("setupPanel").style.display="none";document.getElementById("sessionHead").classList.add("show");document.getElementById("sessionResult").classList.remove("show");renderQuestion()
 }
+function koreaDateKey(value=new Date()){
+  const parts=new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Seoul",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date(value)),get=type=>parts.find(part=>part.type===type)?.value;
+  return `${get("year")}-${get("month")}-${get("day")}`
+}
+function isUnresolvedProgress(p){return!!p.uncertain||(p.wrong>0&&p.streak<(state.settings.masteryStreak||2))}
+function dashboardMetrics(attempts,progress){
+ const ps=Object.values(progress),total=attempts.length,correct=attempts.filter(a=>a.correct).length;
+ return{total,accuracy:total?Math.round(correct/total*100):null,unresolved:state.questions.filter(q=>isUnresolvedProgress(progress[q.id]||{wrong:0,streak:0,uncertain:false})).length,mastered:ps.filter(p=>p.wrong>0&&p.streak>=(state.settings.masteryStreak||2)).length}
+}
+function setStatDelta(id,text,tone){const el=document.getElementById(id);el.textContent=text;el.className=`stat-delta ${tone}`}
+function setStatInsight(id,text){document.getElementById(id).textContent=text}
+function renderDashboardDeltas(current){
+  const today=koreaDateKey(),todayAttempts=state.attempts.filter(a=>koreaDateKey(a.at)===today),before=state.attempts.filter(a=>koreaDateKey(a.at)!==today);
+  if(!todayAttempts.length){["totalAttemptsDelta","accuracyDelta","unresolvedDelta","masteredDelta"].forEach(id=>setStatDelta(id,"오늘 기록 없음","neutral"));setStatInsight("totalAttemptsInsight","문제를 푼 누적 횟수예요.");setStatInsight("accuracyInsight","높을수록 확실히 이해한 문제가 많아요.");setStatInsight("unresolvedInsight","다시 확인할 문제예요.");setStatInsight("masteredInsight","틀린 뒤 2회 연속 정답이에요.");return}
+  const previous=dashboardMetrics(before,progressFromAttempts(before));
+  setStatDelta("totalAttemptsDelta",`↑ 오늘 +${todayAttempts.length}회`,`good`);setStatInsight("totalAttemptsInsight","오늘도 실력이 쌓이고 있어요.");
+  const accuracyDelta=previous.accuracy===null?null:current.accuracy-previous.accuracy;
+  setStatDelta("accuracyDelta",accuracyDelta===null?"오늘 시작":accuracyDelta>0?`↑ ${accuracyDelta}%p`:accuracyDelta<0?`↓ ${Math.abs(accuracyDelta)}%p`:"변화 없음",accuracyDelta===null||accuracyDelta===0?"neutral":accuracyDelta>0?"good":"down");setStatInsight("accuracyInsight","높을수록 확실히 이해한 문제가 많아요.");
+  const unresolvedDelta=current.unresolved-previous.unresolved;
+  setStatDelta("unresolvedDelta",unresolvedDelta<0?`↓ ${Math.abs(unresolvedDelta)}문항`:unresolvedDelta>0?`↑ ${unresolvedDelta}문항`:"변화 없음",unresolvedDelta<0?"good":unresolvedDelta>0?"caution":"neutral");setStatInsight("unresolvedInsight",unresolvedDelta<0?"약점이 줄고 있어요!":unresolvedDelta>0?"이 유형부터 복습해 보세요.":"다시 확인할 문제를 챙겨요.");
+  const masteredDelta=current.mastered-previous.mastered;
+  setStatDelta("masteredDelta",masteredDelta>0?`↑ ${masteredDelta}문항`:masteredDelta<0?`↓ ${Math.abs(masteredDelta)}문항`:"변화 없음",masteredDelta>0?"good":masteredDelta<0?"caution":"neutral");setStatInsight("masteredInsight",masteredDelta>0?"진짜 실력이 늘고 있네요!":masteredDelta<0?"연속 정답으로 다시 굳혀요.":"연속 정답을 이어 가세요.")
+}
+function chapterDailyChange(chapter){
+ const today=koreaDateKey(),attempts=state.attempts.filter(a=>a.chapter===chapter),todayAttempts=attempts.filter(a=>koreaDateKey(a.at)===today),before=attempts.filter(a=>koreaDateKey(a.at)!==today),rate=list=>list.length?Math.round(list.filter(a=>a.correct).length/list.length*100):null,previousRate=rate(before),currentRate=rate(attempts);
+ return{todayAttempts:todayAttempts.length,previousRate,currentRate,delta:previousRate===null||currentRate===null?null:currentRate-previousRate}
+}
+const THEORY_UNITS=[
+ {chapter:"유형자산",label:"회계원리 · 유형자산"},{chapter:"무형자산",label:"회계원리 · 무형자산"},{chapter:"기타비유동자산",label:"회계원리 · 기타비유동자산"},{chapter:"유동부채",label:"회계원리 · 유동부채"},{chapter:"비유동부채",label:"회계원리 · 비유동부채"},{chapter:"주식회사의 자본",label:"회계원리 · 주식회사의 자본"},{chapter:"수익과 비용",label:"회계원리 · 수익과 비용"},{chapter:"회계원리 핵심문제",label:"회계원리 · 핵심문제"},
+ {chapter:"원가회계의 시작",label:"원가회계 · 시작"},{chapter:"원가흐름과 원가계산",label:"원가회계 · 원가흐름과 원가계산"},{chapter:"부문별 원가계산",label:"원가회계 · 부문별 원가계산"},{chapter:"개별원가계산과 제조간접비의 배부",label:"원가회계 · 개별원가와 제조간접비"},{chapter:"종합원가계산",label:"원가회계 · 종합원가계산"},{chapter:"원가회계 핵심문제",label:"원가회계 · 핵심문제"},
+ {chapter:"부가가치세법의 시작",label:"부가가치세법 · 시작"},{chapter:"과세거래",label:"부가가치세법 · 과세거래"},{chapter:"공급시기와 세금계산서",label:"부가가치세법 · 공급시기와 세금계산서"},{chapter:"영세율과 면세",label:"부가가치세법 · 영세율과 면세"},{chapter:"과세표준 및 매출세액",label:"부가가치세법 · 과세표준 및 매출세액"},{chapter:"매입세액 공제와 납부세액 계산",label:"부가가치세법 · 매입세액 공제와 납부세액"},{chapter:"부가가치세법 핵심문제",label:"부가가치세법 · 핵심문제"}
+];
+const PLAN_STEPS=[
+ {id:"theory",title:"이론 완독",start:"2026-07-29",end:"2026-09-06",period:"7/29 ~ 9/6",detail:"회계원리·원가회계·부가가치세법을 마무리합니다. 하루 새 단원 10문항과 이전 단원 복습 5문항을 기본으로 합니다."},
+ {id:"practice",title:"실무 집중",start:"2026-09-07",end:"2026-09-20",period:"9/7 ~ 9/20",detail:"기초정보관리, 일반전표, 매입매출전표, 오류수정·결산·장부조회를 직접 입력하며 익힙니다."},
+ {id:"past",title:"최신 기출 집중",start:"2026-09-21",end:"2026-10-02",period:"9/21 ~ 10/2",detail:"118회부터 123회까지 실전처럼 풀고, 틀린 이론과 실무 입력을 바로 다시 확인합니다."}
+];
+function studyPlanSettings(){
+ state.settings.studyPlan=state.settings.studyPlan||{examDate:"2026-10-03",completed:{}};state.settings.studyPlan.examDate=state.settings.studyPlan.examDate||"2026-10-03";state.settings.studyPlan.completed=state.settings.studyPlan.completed||{};return state.settings.studyPlan
+}
+function planDateLabel(date){const [,month,day]=date.split("-");return `${Number(month)}월 ${Number(day)}일`}
+function daysUntil(date){const today=koreaDateKey(),start=Date.parse(`${today}T00:00:00+09:00`),target=Date.parse(`${date}T00:00:00+09:00`);return Math.round((target-start)/86400000)}
+function planStepStatus(step,completed){
+ const today=koreaDateKey();if(completed)return{label:"완료",className:"done"};if(today<step.start)return{label:"예정",className:""};if(today<=step.end)return{label:"진행 중",className:"now"};return{label:"점검 필요",className:""}
+}
+function daysBetween(start,end){return Math.round((Date.parse(`${end}T00:00:00+09:00`)-Date.parse(`${start}T00:00:00+09:00`))/86400000)}
+const REVIEW_STAGES=[3,7,14];
+function addDaysToKoreaDate(dateKey,days){const [year,month,day]=String(dateKey).split("-").map(Number),date=new Date(Date.UTC(year,month-1,day+days));return `${date.getUTCFullYear()}-${String(date.getUTCMonth()+1).padStart(2,"0")}-${String(date.getUTCDate()).padStart(2,"0")}`}
+function coreSourceRank(source){const text=String(source||"");if(text==="교재 문제팩")return 0;if(text.includes("교재")&&!text.includes("응용"))return 1;if(text==="학습센터 기본 문제")return 2;if(/GPT/i.test(text))return 3;if(/Claude/i.test(text))return 4;return 5}
+function coreQuestionsForChapter(chapter){
+ const questions=state.questions.filter(q=>q.chapter===chapter);if(!questions.length)return[];
+ const primarySource=[...new Set(questions.map(sourceFor))].sort((a,b)=>coreSourceRank(a)-coreSourceRank(b)||a.localeCompare(b,"ko"))[0];
+ return questions.filter(q=>sourceFor(q)===primarySource)
+}
+function coreCompletionDate(chapter){
+ const core=coreQuestionsForChapter(chapter),dates=core.map(q=>state.attempts.filter(a=>a.questionId===q.id&&a.at).map(a=>koreaDateKey(a.at)).sort()[0]||null);
+ return core.length&&dates.every(Boolean)?dates.sort().at(-1):null
+}
+function reviewGuideSettings(){
+ state.settings=state.settings||{masteryStreak:2};
+ if(!state.settings.reviewGuide||typeof state.settings.reviewGuide!=="object"||Array.isArray(state.settings.reviewGuide))state.settings.reviewGuide={version:1,chapters:{}};
+ const guide=state.settings.reviewGuide;guide.version=1;if(!guide.chapters||typeof guide.chapters!=="object"||Array.isArray(guide.chapters))guide.chapters={};return guide
+}
+function syncReviewGuide(){
+ const guide=reviewGuideSettings();let changed=false;
+ chapters().forEach(chapter=>{
+  const anchor=coreCompletionDate(chapter);let entry=guide.chapters[chapter];if(!entry&&!anchor)return;
+  if(!entry||typeof entry!=="object"||Array.isArray(entry)){entry={anchorDate:null,completed:{},lastCompletedDate:null};guide.chapters[chapter]=entry;changed=true}
+  if(!entry.completed||typeof entry.completed!=="object"||Array.isArray(entry.completed)){entry.completed={};changed=true}
+  REVIEW_STAGES.forEach(stage=>{if(!(String(stage) in entry.completed)){entry.completed[String(stage)]=null;changed=true}});
+  if(typeof entry.anchorDate!=="string"&&entry.anchorDate!=null){entry.anchorDate=null;changed=true}
+  if(typeof entry.lastCompletedDate!=="string"&&entry.lastCompletedDate!=null){entry.lastCompletedDate=null;changed=true}
+  if(!entry.anchorDate&&anchor){entry.anchorDate=anchor;changed=true}
+ });
+ return changed
+}
+function reviewGuideEntries(){
+ const guide=reviewGuideSettings(),today=koreaDateKey();
+ return chapters().map(chapter=>{
+  const core=coreQuestionsForChapter(chapter),entry=guide.chapters[chapter];
+  if(!core.length||!entry||!entry.anchorDate)return{chapter,core,ready:false,entry:null,completed:{}};
+  const completed=entry.completed||{},stage=REVIEW_STAGES.find(day=>!completed[String(day)])||null;
+  if(!stage)return{chapter,core,ready:true,done:true,entry,completed};
+  const dueDate=addDaysToKoreaDate(entry.anchorDate,stage),daysToDue=daysBetween(today,dueDate);
+  return{chapter,core,ready:true,done:false,entry,completed,stage,dueDate,daysToDue,due:daysToDue<=0&&entry.lastCompletedDate!==today,blocked:entry.lastCompletedDate===today}
+ })
+}
+function scheduledReviewPool(chapter){
+ return [...coreQuestionsForChapter(chapter)].sort((a,b)=>{
+  const pa=pFor(a.id),pb=pFor(b.id),ua=isUnresolved(a.id)?0:1,ub=isUnresolved(b.id)?0:1;
+  return ua-ub||(pa.attempts||0)-(pb.attempts||0)||String(pa.last||"").localeCompare(String(pb.last||""))||String(a.number).localeCompare(String(b.number),"ko",{numeric:true})
+ }).slice(0,5)
+}
+function unresolvedReviewGroups(){
+ return chapters().map(chapter=>({chapter,questions:state.questions.filter(q=>q.chapter===chapter&&isUnresolved(q.id))})).filter(group=>group.questions.length).sort((a,b)=>b.questions.length-a.questions.length||a.chapter.localeCompare(b.chapter,"ko"))
+}
+function scheduledReviewGroups(stage,entries){
+ return entries.filter(entry=>entry.ready&&!entry.done&&entry.stage===stage&&entry.due).map(entry=>({chapter:entry.chapter,questions:scheduledReviewPool(entry.chapter)})).filter(group=>group.questions.length).sort((a,b)=>a.chapter.localeCompare(b.chapter,"ko"))
+}
+function reviewStageInfo(stage){return({now:{title:"지금 바로",desc:"틀린 문제 · 헷갈림 · 찍음",className:"now"},3:{title:"3일 복습",desc:"새로 배운 내용을 굳혀요",className:"day3"},7:{title:"7일 점검",desc:"기억이 남아 있는지 확인해요",className:"day7"},14:{title:"14일 확인",desc:"장기 기억으로 옮겨요",className:"day14"}})[String(stage)]}
+function reviewChoiceMarkup(groups,stage){
+ const button=group=>`<button class="review-choice" type="button" data-review-guide-chapter="${esc(group.chapter)}" data-review-guide-stage="${esc(stage)}"><b>${esc(group.chapter)}</b><small>${Math.min(group.questions.length,5)}문항 시작</small></button>`,shown=groups.slice(0,3),rest=groups.slice(3);
+ return `<div class="review-choice-list">${shown.map(button).join("")}</div>${rest.length?`<details class="review-more"><summary>다른 ${rest.length}개 단원 보기</summary><div class="review-choice-list">${rest.map(button).join("")}</div></details>`:""}`
+}
+function reviewCardMarkup(stage,groups,entries){
+ const info=reviewStageInfo(stage),today=koreaDateKey(),count=groups.reduce((sum,group)=>sum+group.questions.length,0),completedToday=stage==="now"?[]:entries.filter(entry=>(entry.completed||{})[String(stage)]===today),blockedToday=stage==="now"?[]:entries.filter(entry=>entry.ready&&!entry.done&&entry.stage===stage&&entry.blocked);
+ let body="",label=groups.length?`${count}문항`:"예정";
+ if(groups.length)body=reviewChoiceMarkup(groups,stage);
+ else if(completedToday.length){label="오늘 완료";body=`<p class="review-complete">오늘 ${info.title}을 마쳤어요. 다음 단계는 내일부터 다시 열립니다.</p>`}
+ else if(blockedToday.length){label="내일";body=`<p class="review-empty">오늘 이전 복습을 마쳤습니다. <b>${info.title}</b>은 내일부터 선택할 수 있어요.</p>`}
+ else if(stage==="now"){label="복습 없음";body='<p class="review-empty">지금 바로잡아야 할 문제는 없습니다. 유형별 숙달도에서 낮은 유형을 골라 점검해도 좋아요.</p>'}
+ else{
+  const future=entries.filter(entry=>entry.ready&&!entry.done&&entry.stage===stage&&entry.daysToDue>0).sort((a,b)=>a.daysToDue-b.daysToDue||a.chapter.localeCompare(b.chapter,"ko"))[0];
+  body=future?`<p class="review-empty">다음: <b>${esc(future.chapter)}</b> · ${future.daysToDue===1?"내일":`${future.daysToDue}일 후`}</p>`:'<p class="review-empty">새 단원 기본문제를 모두 한 번 풀면, 이 시점에 복습할 단원이 나타납니다.</p>'
+ }
+ return `<article class="review-slot ${info.className}"><div class="review-slot-head"><div><h3>${info.title}</h3><p class="review-stage-desc">${info.desc}</p></div><span class="review-slot-count">${label}</span></div>${body}</article>`
+}
+function renderReviewGuide(){
+ if(syncReviewGuide())save();
+ const entries=reviewGuideEntries(),nowGroups=unresolvedReviewGroups(),cards=["now",3,7,14].map(stage=>reviewCardMarkup(stage,stage==="now"?nowGroups:scheduledReviewGroups(stage,entries),entries)).join("");
+ document.getElementById("recommendation").className="";document.getElementById("recommendation").innerHTML=`<div class="review-guide">${cards}<p class="review-guide-note">이 안내는 단원을 대신 고르지 않습니다. 유형별 숙달도도 함께 보고, 필요한 시점과 단원을 직접 선택하세요.</p></div>`;bindReviewGuideButtons()
+}
+function completeGuideStageIfEligible(){
+ if(!guideSession||!guideSession.stage||pendingAttempt||!session.length||sessionStates.length!==session.length||sessionStates.some(item=>!item))return"";
+ const entry=reviewGuideEntries().find(item=>item.chapter===guideSession.chapter),today=koreaDateKey();if(!entry||entry.stage!==guideSession.stage||!entry.due)return"";
+ const guide=reviewGuideSettings(),record=guide.chapters[guideSession.chapter];if(!record||record.lastCompletedDate===today||record.completed[String(guideSession.stage)])return"";
+ record.completed[String(guideSession.stage)]=today;record.lastCompletedDate=today;save();return `${guideSession.stage}일 복습을 완료했어요. 틀린 문제는 ‘지금 바로’에 계속 남아 있습니다.`
+}
+function mergeReviewGuideSettings(incomingGuide){
+ if(!incomingGuide||typeof incomingGuide!=="object"||Array.isArray(incomingGuide)||!incomingGuide.chapters||typeof incomingGuide.chapters!=="object")return;
+ const guide=reviewGuideSettings(),earlier=(a,b)=>[a,b].filter(value=>typeof value==="string"&&value).sort()[0]||null,later=(a,b)=>[a,b].filter(value=>typeof value==="string"&&value).sort().at(-1)||null;
+ Object.entries(incomingGuide.chapters).forEach(([chapter,remote])=>{
+  if(!remote||typeof remote!=="object"||Array.isArray(remote))return;let local=guide.chapters[chapter];
+  if(!local||typeof local!=="object"||Array.isArray(local)){local={anchorDate:null,completed:{},lastCompletedDate:null};guide.chapters[chapter]=local}
+  local.completed=local.completed&&typeof local.completed==="object"&&!Array.isArray(local.completed)?local.completed:{};const remoteCompleted=remote.completed&&typeof remote.completed==="object"&&!Array.isArray(remote.completed)?remote.completed:{};
+  local.anchorDate=earlier(local.anchorDate,remote.anchorDate);REVIEW_STAGES.forEach(stage=>local.completed[String(stage)]=later(local.completed[String(stage)],remoteCompleted[String(stage)]));local.lastCompletedDate=later(local.lastCompletedDate,remote.lastCompletedDate)
+ })
+}
+function theoryUnitCoreQuestions(unit){
+ return coreQuestionsForChapter(unit.chapter)
+}
+function theoryUnitFinished(unit){const questions=theoryUnitCoreQuestions(unit);return questions.length>0&&questions.every(q=>pFor(q.id).attempts>0)}
+function theoryPace(){
+ const phase=PLAN_STEPS[0],today=koreaDateKey(),total=THEORY_UNITS.length,elapsed=daysBetween(phase.start,today),duration=daysBetween(phase.start,phase.end)+1,target=today<phase.start?0:today>phase.end?total:Math.min(total,Math.ceil((elapsed+1)/duration*total));let complete=0;for(const unit of THEORY_UNITS){if(!theoryUnitFinished(unit))break;complete++}return{phase,total,target,complete,next:THEORY_UNITS[Math.min(complete,total-1)],goal:target?THEORY_UNITS[target-1]:THEORY_UNITS[0]}
+}
+function goalUnitMarkup(label){const parts=String(label).split("·"),course=parts.shift().trim(),unit=parts.join("·").trim();return unit?`${esc(course)} <span class="goal-unit-highlight">· ${esc(unit)}</span>`:esc(label)}
+function renderTodayGoal(){
+ const el=document.getElementById("todayGoal"),pace=theoryPace(),today=koreaDateKey();if(today>pace.phase.end){el.innerHTML=`<div class="today-goal"><p class="goal-kicker">이론 계획 기간 완료</p><h3>실무 집중 단계입니다</h3><p class="goal-routine">학습 계획 메뉴에서 실무 단계의 완료 표시를 관리하세요. 복습은 안내판에서 짧게 이어가면 됩니다.</p></div>`;return}
+ const beforeStart=today<pace.phase.start,shortage=Math.max(0,pace.target-pace.complete),goalUnit=beforeStart?pace.next:pace.goal,status=beforeStart?"내일부터 이론 계획이 시작됩니다.":shortage?`목표보다 ${shortage}개 단원 차이입니다. 오늘 새 단원부터 시작하면 됩니다.`:"계획 속도에 맞게 진행 중입니다. 복습 안내에서 5문항 정도 이어가세요.",statusClass=shortage?"behind":"ahead",headline=beforeStart?"내일부터 시작할 단원":shortage?"오늘 최소 목표":"다음 새 단원";
+ el.innerHTML=`<div class="today-goal"><p class="goal-kicker">${headline}</p><h3>${goalUnitMarkup(goalUnit.label)}</h3><div class="goal-progress"><span>완료</span><strong>${pace.complete} / ${pace.total}</strong><span>목표 단원</span></div><p class="goal-status ${statusClass}">${status}</p><p class="goal-routine"><b>오늘 기본 루틴:</b> 새 단원 10문항 + 복습 5문항</p></div>`
+}
+function renderStudyPlan(){
+ const plan=studyPlanSettings(),allQuestions=state.questions,startedChapters=chapters().filter(chapter=>allQuestions.some(q=>q.chapter===chapter&&pFor(q.id).attempts>0)),attemptedQuestions=allQuestions.filter(q=>pFor(q.id).attempts>0),today=koreaDateKey(),todayAttempts=state.attempts.filter(a=>koreaDateKey(a.at)===today).length,unresolved=allQuestions.filter(q=>isUnresolved(q.id)).length,days=daysUntil(plan.examDate),examLabel=days>=0?`D-${days}`:"시험일 경과";
+ const steps=PLAN_STEPS.map(step=>{const completed=!!plan.completed[step.id],status=planStepStatus(step,completed);return`<li class="plan-step ${completed?"done":""}"><label class="plan-check"><input type="checkbox" data-plan-step="${step.id}" ${completed?"checked":""} aria-label="${esc(step.title)} 완료 표시"></label><div><h3>${esc(step.title)}</h3><p>${esc(step.detail)}</p></div><div class="plan-period"><b>${esc(step.period)}</b><span class="${status.className}">${status.label}</span></div></li>`}).join("");
+ document.getElementById("studyPlan").innerHTML=`<div class="plan-summary"><div class="plan-stat"><span>시험일</span><strong>${planDateLabel(plan.examDate)}</strong><small>${examLabel}</small></div><div class="plan-stat"><span>오늘의 학습</span><strong>${todayAttempts}</strong><small>문제 풀이</small></div><div class="plan-stat"><span>등록 단원 진도</span><strong>${startedChapters.length} / ${chapters().length}</strong><small>학습센터에서 시작한 단원</small></div><div class="plan-stat"><span>복습 필요</span><strong>${unresolved}</strong><small>문항</small></div></div><p class="plan-auto"><b>자동 반영:</b> 학습센터에 등록된 문제 ${allQuestions.length}문항 중 ${attemptedQuestions.length}문항을 풀었습니다. 새 문제팩을 추가하거나 문제를 풀면 이 수치가 바로 갱신됩니다.</p><ol class="plan-timeline">${steps}</ol><p class="plan-note">이론 진도는 학습센터 풀이 기록으로 자동 반영됩니다. 실무 입력과 기출 완독은 실제 학습을 마친 뒤 왼쪽 체크를 눌러 완료 표시하세요.</p>`;
+ document.querySelectorAll("[data-plan-step]").forEach(box=>box.addEventListener("change",()=>{plan.completed[box.dataset.planStep]=box.checked;save();renderStudyPlan()}))
+}
 function renderDashboard(){
- const ps=Object.values(state.progress),total=state.attempts.length,correct=state.attempts.filter(a=>a.correct).length;
- document.getElementById("totalAttempts").textContent=total;
- document.getElementById("accuracy").textContent=total?Math.round(correct/total*100)+"%":"—";
- document.getElementById("unresolved").textContent=state.questions.filter(q=>isUnresolved(q.id)).length;
- document.getElementById("mastered").textContent=ps.filter(p=>p.wrong>0&&p.streak>=state.settings.masteryStreak).length;
+ const metrics=dashboardMetrics(state.attempts,state.progress);
+ document.getElementById("totalAttempts").textContent=metrics.total;
+ document.getElementById("accuracy").textContent=metrics.accuracy===null?"—":metrics.accuracy+"%";
+ document.getElementById("unresolved").textContent=metrics.unresolved;
+ document.getElementById("mastered").textContent=metrics.mastered;renderDashboardDeltas(metrics);
  const folders=chapters().map(chapter=>{
-  const chapterQuestions=state.questions.filter(q=>q.chapter===chapter),ids=chapterQuestions.map(q=>q.id),attempts=state.attempts.filter(x=>ids.includes(x.questionId)),rate=attempts.length?Math.round(attempts.filter(x=>x.correct).length/attempts.length*100):0,status=masteryStatus(rate,attempts.length),open=!!(state.settings.masteryFolders&&state.settings.masteryFolders[chapter]);
+  const chapterQuestions=state.questions.filter(q=>q.chapter===chapter),ids=chapterQuestions.map(q=>q.id),attempts=state.attempts.filter(x=>ids.includes(x.questionId)),rate=attempts.length?Math.round(attempts.filter(x=>x.correct).length/attempts.length*100):0,status=masteryStatus(rate,attempts.length),open=!!(state.settings.masteryFolders&&state.settings.masteryFolders[chapter]),daily=chapterDailyChange(chapter),delta=daily.delta===null?(daily.todayAttempts?'<span class="folder-delta new">오늘 시작</span>':""):daily.delta>0?`<span class="folder-delta up">+${daily.delta}%p ↑</span>`:daily.delta<0?`<span class="folder-delta down">${daily.delta}%p ↓</span>`:(daily.todayAttempts?'<span class="folder-delta flat">변화 없음</span>':"");
   const types=[...new Set(chapterQuestions.map(q=>q.type))];
   const rows=types.map(t=>{const typeQuestions=chapterQuestions.filter(q=>q.type===t),typeIds=typeQuestions.map(q=>q.id),a=state.attempts.filter(x=>typeIds.includes(x.questionId)),typeRate=a.length?Math.round(a.filter(x=>x.correct).length/a.length*100):0,typeStatus=masteryStatus(typeRate,a.length),unresolved=typeQuestions.filter(q=>isUnresolved(q.id)).length,label=typeStatus==="needs-review"&&unresolved?`<button class="quick-type" type="button" data-quick-chapter="${esc(chapter)}" data-quick-type="${esc(t)}" title="빠른 복습 선택">${esc(t)}</button>`:`<b>${esc(t)}</b>`;return`<div class="master-row ${typeStatus}"><div class="master-label">${label}</div><div class="meter"><i style="width:${typeRate}%"></i></div><span>${a.length?typeRate+"%":"미응시"}</span></div>`}).join("");
-  return`<section class="master-folder ${open?"open":""} ${status}" data-folder-chapter="${esc(chapter)}"><button class="master-folder-head" type="button" data-mastery-folder="${esc(chapter)}" aria-expanded="${open}"><span class="folder-arrow">▶</span><span class="folder-title">${esc(chapterLabel(chapter))}</span><span class="folder-score">${attempts.length?rate+"%":"미응시"}</span><span class="folder-meta">${chapterQuestions.length}문항 · ${types.length}개 유형</span></button><div class="master-folder-children">${rows}</div></section>`
+  return`<section class="master-folder ${open?"open":""} ${status}" data-folder-chapter="${esc(chapter)}"><button class="master-folder-head" type="button" data-mastery-folder="${esc(chapter)}" aria-expanded="${open}"><span class="folder-arrow">▶</span><span class="folder-title">${esc(chapterLabel(chapter))}</span>${delta}<span class="folder-score">${attempts.length?rate+"%":"미응시"}</span><span class="folder-meta">${chapterQuestions.length}문항 · ${types.length}개 유형${daily.todayAttempts?` · <span class="today-count">오늘 ${daily.todayAttempts}회</span>`:""}</span></button><div class="master-folder-children">${rows}</div></section>`
  }).join("");
  document.getElementById("masteryChart").innerHTML=folders||'<div class="empty">문제 유형이 없습니다.</div>';bindMasteryFolders();bindQuickTypeButtons();
- const wrong=state.questions.filter(q=>isUnresolved(q.id));
- const recommendation=wrong.length?`<div class="recommend-list">${chapters().map(chapter=>{
-  const items=wrong.filter(q=>q.chapter===chapter);if(!items.length)return "";
-  const concepts=[...items.reduce((map,q)=>{const key=`${q.type} · ${q.concept}`;map.set(key,(map.get(key)||0)+1);return map},new Map()).entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],"ko")).slice(0,2).map(([key,count])=>`${esc(key)} ${count}문항`).join(" · ");
-  return`<button class="recommend-item" type="button" data-recommend-chapter="${esc(chapter)}" title="${esc(chapter)} 복습 필요 문제 바로 풀기"><b>${esc(chapter)} · 복습 필요 ${items.length}문항</b><p>${concepts}</p></button>`
- }).join("")}</div><p class="recommend-note">단원 버튼을 누르면 해당 단원의 ‘틀린 문제만’이 바로 시작됩니다.</p>`:"현재 남아 있는 오답이 없습니다. 전체 문제로 기억을 점검해 보세요.";
- document.getElementById("recommendation").innerHTML=recommendation;bindRecommendationButtons();
+  renderReviewGuide();renderTodayGoal();
 }
 function latestUnderstandingMemo(id){for(let i=state.attempts.length-1;i>=0;i--){const a=state.attempts[i];if(a.questionId===id&&a.understandingMemo)return a.understandingMemo}return ""}
 function renderRecords(){
@@ -315,7 +495,7 @@ function renderRecords(){
  document.getElementById("recordsTable").innerHTML=rows?`<table class="records"><thead><tr><th>단원</th><th>출처</th><th>번호</th><th>유형</th><th>세부 개념</th><th>정답/풀이</th><th>연속 정답</th><th>상태</th><th>이해 메모</th></tr></thead><tbody>${rows}</tbody></table>`:'<div class="empty">아직 기록된 문제가 없습니다.</div>'
 }
 function showNotice(id,msg){const el=document.getElementById(id);el.textContent=msg;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),4500)}
-function switchView(name){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===name+"View"));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===name));if(name==="dashboard")renderDashboard();if(name==="records")renderRecords()}
+function switchView(name){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===name+"View"));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===name));if(name==="dashboard")renderDashboard();if(name==="plan")renderStudyPlan();if(name==="records")renderRecords()}
 document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>switchView(b.dataset.view)));
 
 function startSession(){
@@ -326,7 +506,7 @@ function startSession(){
  if(mode==="weak"){const weakTypes=[...new Set(pool.filter(q=>isUnresolved(q.id)).map(q=>q.type))];pool=pool.filter(q=>weakTypes.includes(q.type))}
  if(mode==="variant"){const parents=pool.filter(q=>isUnresolved(q.id)).map(q=>q.id);pool=state.variants.filter(v=>parents.includes(v.parentId)&&(!source||sourceFor(v)===source))}
  if(!pool.length){showNotice("setupNotice",mode==="all"?"출제할 문제가 없습니다.":"해당 조건의 문제가 없습니다. 먼저 문제를 풀거나 오답 번호를 등록하세요.");return}
- session=(mode==="all"?pool:shuffle(pool).slice(0,limit));sessionIndex=0;sessionCorrect=0;answered=false;pendingAttempt=null;sessionStates=[];sessionDrafts=[];
+ guideSession=null;session=(mode==="all"?pool:shuffle(pool).slice(0,limit));sessionIndex=0;sessionCorrect=0;answered=false;pendingAttempt=null;sessionStates=[];sessionDrafts=[];
  document.getElementById("setupPanel").style.display="none";document.getElementById("sessionHead").classList.add("show");document.getElementById("sessionResult").classList.remove("show");renderQuestion()
 }
 function renderQuestion(){
@@ -334,10 +514,10 @@ function renderQuestion(){
  document.getElementById("sessionCount").textContent=`${sessionIndex+1} / ${session.length}`;document.getElementById("sessionBar").style.width=`${sessionIndex/session.length*100}%`;
  card.className="panel question show";
  const selectedIndex=reviewed?reviewed.selectedIndex:draft.selectedIndex,confidence=reviewed?reviewed.confidence:(draft.confidence||"sure"),understandingMemo=reviewed?(reviewed.understandingMemo||""):(draft.understandingMemo||"");
- card.innerHTML=`<div class="qhead"><span class="qnum">QUESTION ${esc(q.number)}</span><div class="tags"><span class="tag">출처 · ${esc(sourceFor(q))}</span><span class="tag">${esc(q.type)}</span><span class="tag">${esc(q.concept)}</span>${q.variant?'<span class="tag variant">응용 변형</span>':""}</div></div><h3>${esc(q.q)}</h3>${q.case?`<div class="case">${esc(q.case)}</div>`:""}${questionTable(q.table)}<div class="options">${q.o.map((x,i)=>`<label class="option"><input type="radio" name="answer" value="${i}" ${selectedIndex===i?"checked":""}><span class="mark">${["①","②","③","④"][i]}</span><span>${esc(x)}</span></label>`).join("")}</div><div class="confidence"><span class="confidence-label">풀이 상태</span><label class="confidence-option"><input type="radio" name="confidence" value="sure" ${confidence==="sure"?"checked":""}> 확실함</label><label class="confidence-option"><input type="radio" name="confidence" value="unsure" ${confidence==="unsure"?"checked":""}> 헷갈림</label><label class="confidence-option"><input type="radio" name="confidence" value="guess" ${confidence==="guess"?"checked":""}> 찍음</label></div><div class="why"><b>정답 ${["①","②","③","④"][q.a]}.</b> ${esc(q.e)}</div><div class="qactions"><button class="btn soft" id="quitBtn">세션 끝내기</button><button class="btn soft" id="prevBtn" ${sessionIndex===0?"disabled":""}>← 이전 문제</button><button class="btn primary" id="checkBtn">${reviewed?(sessionIndex<session.length-1?"다음 문제":"결과 보기"):"정답 확인"}</button></div>`;
+  card.innerHTML=`<div class="qhead"><span class="qnum">QUESTION ${esc(q.number)}</span><div class="tags"><span class="tag">출처 · ${esc(sourceFor(q))}</span><span class="tag">${esc(q.type)}</span><span class="tag">${esc(q.concept)}</span>${q.variant?'<span class="tag variant">응용 변형</span>':""}</div></div><h3>${esc(q.q)}</h3>${q.case?`<div class="case">${esc(q.case)}</div>`:""}${questionTable(q.table)}<div class="options">${q.o.map((x,i)=>`<label class="option"><input type="radio" name="answer" value="${i}" ${selectedIndex===i?"checked":""}><span class="mark">${["①","②","③","④"][i]}</span><span>${esc(x)}</span></label>`).join("")}</div><div class="confidence"><span class="confidence-label">풀이 상태</span><label class="confidence-option"><input type="radio" name="confidence" value="sure" ${confidence==="sure"?"checked":""}> 확실함</label><label class="confidence-option"><input type="radio" name="confidence" value="unsure" ${confidence==="unsure"?"checked":""}> 헷갈림</label><label class="confidence-option"><input type="radio" name="confidence" value="guess" ${confidence==="guess"?"checked":""}> 찍음</label></div><div class="why"><b>정답 ${["①","②","③","④"][q.a]}.</b> ${esc(q.e)}</div><div class="qactions"><button class="btn soft" id="quitBtn">세션 끝내기</button><button class="btn soft" id="prevBtn" ${sessionIndex===0?"disabled":""}>← 이전 문제</button><button class="btn danger" id="deleteQuestionBtn">문제 삭제</button><button class="btn primary" id="checkBtn">${reviewed?(sessionIndex<session.length-1?"다음 문제":"결과 보기"):"정답 확인"}</button></div>`;
  document.querySelector(".confidence").insertAdjacentHTML("afterend",`<div class="confidence-memo" id="confidenceMemo" ${confidence==="sure"?"hidden":""}><label for="confidenceMemoText">이해 메모 <span>선택</span></label><textarea id="confidenceMemoText" maxlength="200" placeholder="헷갈리거나 찍은 이유를 짧게 적어 주세요.">${esc(understandingMemo)}</textarea><p>헷갈림·찍음을 선택했을 때, 정답·오답과 관계없이 함께 저장됩니다.</p></div>`);
  document.getElementById("checkBtn").insertAdjacentHTML("beforebegin",`<button class="btn accent" id="retryBtn" ${reviewed?"":"hidden"} ${pendingAttempt?"disabled":""}>다시 풀기</button>`);
- document.getElementById("checkBtn").addEventListener("click",checkAnswer);document.getElementById("quitBtn").addEventListener("click",finishSession);document.getElementById("prevBtn").addEventListener("click",previousQuestion);document.getElementById("retryBtn").addEventListener("click",retryQuestion);
+  document.getElementById("checkBtn").addEventListener("click",checkAnswer);document.getElementById("quitBtn").addEventListener("click",finishSession);document.getElementById("prevBtn").addEventListener("click",previousQuestion);document.getElementById("retryBtn").addEventListener("click",retryQuestion);document.getElementById("deleteQuestionBtn").addEventListener("click",deleteCurrentQuestion);
  card.querySelectorAll('input[name="confidence"]').forEach(input=>input.addEventListener("change",()=>{document.getElementById("confidenceMemo").hidden=document.querySelector('input[name="confidence"]:checked')?.value==="sure"}));
  card.insertAdjacentHTML("beforeend",'<div class="mistake-reason" id="mistakeReason" hidden><strong>오답 원인을 선택해 주세요</strong><div class="reason-actions"><button class="btn soft" data-reason="몰라서 틀림">몰라서 틀림</button><button class="btn soft" data-reason="실수로 틀림">실수로 틀림</button><button class="btn soft" data-reason="시간이 부족">시간이 부족</button></div></div>');
  card.insertAdjacentHTML("beforeend",'<div class="understanding-note" id="understandingNote" hidden><strong>맞혔지만 ‘이해 보류’로 기록했습니다</strong><p>어느 부분이 이해되지 않았는지 짧게 남기면, 학습기록에서 다시 확인할 수 있습니다.</p><textarea id="understandingMemo" maxlength="200" placeholder="예: 선입선출법에서 매출총이익이 달라지는 이유"></textarea><div class="reason-actions"><button class="btn soft" id="skipUnderstandingMemo">메모 없이 계속</button><button class="btn primary" id="saveUnderstandingMemo">메모 저장</button></div></div>');
@@ -353,29 +533,41 @@ function previousQuestion(){
  if(!answered)sessionDrafts[sessionIndex]={selectedIndex:selected?+selected.value:null,confidence,understandingMemo:document.getElementById("confidenceMemoText")?.value.trim()||""};sessionIndex--;renderQuestion()
 }
 function checkAnswer(){
- if(answered){if(sessionIndex<session.length-1){sessionIndex++;renderQuestion()}else finishSession();return}
+  if(answered){if(sessionIndex<session.length-1){sessionIndex++;renderQuestion()}else finishSession(true);return}
  const q=session[sessionIndex],selected=document.querySelector('input[name="answer"]:checked');if(!selected)return;
  answered=true;const actualCorrect=+selected.value===q.a,confidence=document.querySelector('input[name="confidence"]:checked')?.value||"sure",understandingMemo=confidence==="sure"?"":(document.getElementById("confidenceMemoText")?.value.trim()||""),understandingHold=actualCorrect&&confidence!=="sure",correct=actualCorrect&&!understandingHold,attemptId=`session-${Date.now()}-${Math.random().toString(36).slice(2)}`;if(correct)sessionCorrect++;sessionStates[sessionIndex]={selectedIndex:+selected.value,confidence,understandingMemo,actualCorrect,correct,understandingHold,attemptId};delete sessionDrafts[sessionIndex];
- const recordId=q.parentId||q.id,p=pFor(recordId),at=new Date().toISOString();pendingAttempt={attemptId,questionId:recordId,servedId:q.id,chapter:q.chapter,source:sourceFor(q),type:q.type,concept:q.concept,correct,actualCorrect,confidence,understandingHold,understandingMemo,at,variant:!!q.variant};state.progress[recordId]=applyAttemptToProgress(p,pendingAttempt);
- if(correct||understandingHold){state.attempts.push(pendingAttempt);pendingAttempt=null;save();if(understandingHold)document.getElementById("understandingNote").hidden=false}else{document.getElementById("mistakeReason").hidden=false;document.getElementById("checkBtn").disabled=true;document.getElementById("quitBtn").disabled=true;document.getElementById("prevBtn").disabled=true;document.getElementById("retryBtn").disabled=true}
+  const recordId=q.parentId||q.id,p=pFor(recordId),at=new Date().toISOString();pendingAttempt={attemptId,questionId:recordId,servedId:q.id,chapter:q.chapter,source:sourceFor(q),type:q.type,concept:q.concept,correct,actualCorrect,confidence,understandingHold,understandingMemo,at,variant:!!q.variant};state.progress[recordId]=applyAttemptToProgress(p,pendingAttempt,state.settings.masteryStreak||2);
+  if(correct||understandingHold){state.attempts.push(pendingAttempt);pendingAttempt=null;syncReviewGuide();save();if(understandingHold)document.getElementById("understandingNote").hidden=false}else{document.getElementById("mistakeReason").hidden=false;document.getElementById("checkBtn").disabled=true;document.getElementById("quitBtn").disabled=true;document.getElementById("prevBtn").disabled=true;document.getElementById("retryBtn").disabled=true}
  const card=document.getElementById("questionCard");card.classList.add("graded");card.querySelectorAll("input").forEach(i=>i.disabled=true);document.getElementById("confidenceMemoText").disabled=true;document.getElementById("retryBtn").hidden=false;card.querySelectorAll(".option").forEach(o=>{const i=o.querySelector("input");o.classList.toggle("correct",+i.value===q.a);o.classList.toggle("wrong",i.checked&&+i.value!==q.a)});
  document.getElementById("checkBtn").textContent=sessionIndex<session.length-1?"다음 문제":"결과 보기"
 }
-function saveMistakeReason(reason){if(!pendingAttempt)return;pendingAttempt.mistakeReason=reason;state.attempts.push(pendingAttempt);pendingAttempt=null;save();document.getElementById("mistakeReason").hidden=true;document.getElementById("checkBtn").disabled=false;document.getElementById("quitBtn").disabled=false;document.getElementById("prevBtn").disabled=sessionIndex===0;document.getElementById("retryBtn").disabled=false}
+function saveMistakeReason(reason){if(!pendingAttempt)return;pendingAttempt.mistakeReason=reason;state.attempts.push(pendingAttempt);pendingAttempt=null;syncReviewGuide();save();document.getElementById("mistakeReason").hidden=true;document.getElementById("checkBtn").disabled=false;document.getElementById("quitBtn").disabled=false;document.getElementById("prevBtn").disabled=sessionIndex===0;document.getElementById("retryBtn").disabled=false}
 function retryQuestion(){
- if(pendingAttempt)return;
- const reviewed=sessionStates[sessionIndex];if(!reviewed)return;
- if(reviewed.attemptId){state.attempts=state.attempts.filter(a=>a.attemptId!==reviewed.attemptId);rebuildProgress();save()}
- if(reviewed.correct)sessionCorrect=Math.max(0,sessionCorrect-1);
- sessionStates[sessionIndex]=null;sessionDrafts[sessionIndex]={selectedIndex:reviewed.selectedIndex,confidence:reviewed.confidence,understandingMemo:reviewed.understandingMemo||""};answered=false;renderQuestion()
+  if(pendingAttempt)return;
+  const reviewed=sessionStates[sessionIndex];if(!reviewed)return;
+  if(reviewed.attemptId){state.attempts=state.attempts.filter(a=>a.attemptId!==reviewed.attemptId);rebuildProgress();save()}
+  if(reviewed.correct)sessionCorrect=Math.max(0,sessionCorrect-1);
+  sessionStates[sessionIndex]=null;sessionDrafts[sessionIndex]={selectedIndex:reviewed.selectedIndex,confidence:reviewed.confidence,understandingMemo:reviewed.understandingMemo||""};answered=false;renderQuestion()
 }
-function finishSession(){
- document.getElementById("questionCard").classList.remove("show");document.getElementById("sessionHead").classList.remove("show");
- const r=document.getElementById("sessionResult");r.classList.add("show");const rate=session.length?Math.round(sessionCorrect/session.length*100):0;
- r.innerHTML=`<p class="eyebrow">SESSION COMPLETE</p><div class="bigscore">${sessionCorrect} / ${session.length}</div><p>확실히 맞힌 정답률 ${rate}% · ‘헷갈림·찍음’ 정답은 이해 보류로 저장됩니다.</p><div class="result-actions"><button class="btn accent" id="reviewNow">남은 오답 풀기</button><button class="btn soft" id="backSetup">다른 학습 선택</button></div>`;
- document.getElementById("backSetup").addEventListener("click",resetSession);document.getElementById("reviewNow").addEventListener("click",()=>{resetSession();document.getElementById("modeSelect").value="wrong";startSession()});renderDashboard();renderRecords()
+function deleteCurrentQuestion(){
+ const q=session[sessionIndex];if(!q)return;
+ const ids=new Set(q.variant?[q.parentId,...state.variants.filter(v=>v.parentId===q.parentId).map(v=>v.id)]:[q.id,...state.variants.filter(v=>v.parentId===q.id).map(v=>v.id)]),scope=ids.size>1?"이 문제와 연결된 원본·응용문제":"이 문제";
+ if(!confirm(`${scope}를 학습센터에서 삭제할까요?\n삭제한 문제와 풀이 기록은 복습·숙달도에 더 이상 반영되지 않습니다.\n원본 JSON 파일은 그대로 보관됩니다.`))return;
+ const completedBefore=session.slice(0,sessionIndex).filter(item=>!ids.has(item.id)).length,kept=session.map((item,index)=>({item,reviewed:sessionStates[index],draft:sessionDrafts[index]})).filter(entry=>!ids.has(entry.item.id));
+ state.excludedQuestionIds=[...new Set([...(state.excludedQuestionIds||[]),...ids])];state.questions=state.questions.filter(item=>!ids.has(item.id));state.variants=state.variants.filter(item=>!ids.has(item.id));state.attempts=state.attempts.filter(a=>!ids.has(a.questionId)&&!ids.has(a.servedId));rebuildProgress();save();
+ session=kept.map(entry=>entry.item);sessionStates=kept.map(entry=>entry.reviewed);sessionDrafts=kept.map(entry=>entry.draft);sessionCorrect=sessionStates.filter(entry=>entry&&entry.correct).length;pendingAttempt=null;
+ fillChapters();renderDashboard();renderStudyPlan();renderRecords();
+ if(!session.length){document.getElementById("questionCard").classList.remove("show");document.getElementById("sessionHead").classList.remove("show");resetSession();showNotice("setupNotice","문제를 삭제했습니다. 다른 문제를 골라 학습을 이어가세요.");return}
+ sessionIndex=Math.min(completedBefore,session.length-1);renderQuestion()
 }
-function resetSession(){document.getElementById("sessionResult").classList.remove("show");document.getElementById("setupPanel").style.display="block"}
+function finishSession(completed=false){
+  const guideMessage=completed?completeGuideStageIfEligible():"";
+  document.getElementById("questionCard").classList.remove("show");document.getElementById("sessionHead").classList.remove("show");
+  const r=document.getElementById("sessionResult");r.classList.add("show");const rate=session.length?Math.round(sessionCorrect/session.length*100):0;
+  r.innerHTML=`<p class="eyebrow">SESSION COMPLETE</p><div class="bigscore">${sessionCorrect} / ${session.length}</div><p>확실히 맞힌 정답률 ${rate}% · ‘헷갈림·찍음’ 정답은 이해 보류로 저장됩니다.</p>${guideMessage?`<p class="guide-complete">${esc(guideMessage)}</p>`:""}<div class="result-actions"><button class="btn accent" id="reviewNow">남은 오답 풀기</button><button class="btn soft" id="backSetup">다른 학습 선택</button></div>`;
+ document.getElementById("backSetup").addEventListener("click",resetSession);document.getElementById("reviewNow").addEventListener("click",()=>{resetSession();document.getElementById("modeSelect").value="wrong";startSession()});renderDashboard();renderStudyPlan();renderRecords()
+}
+function resetSession(){guideSession=null;document.getElementById("sessionResult").classList.remove("show");document.getElementById("setupPanel").style.display="block"}
 document.getElementById("startBtn").addEventListener("click",startSession);
 document.getElementById("masteryCloseAll").addEventListener("click",()=>setAllMasteryFolders(false));
 document.getElementById("masteryOpenAll").addEventListener("click",()=>setAllMasteryFolders(true));
@@ -389,7 +581,7 @@ document.getElementById("limitSelect").addEventListener("change",e=>{
 document.getElementById("manualAdd").addEventListener("click",()=>{
  const chapter=document.getElementById("manualChapter").value,source=document.getElementById("manualSource").value,raw=document.getElementById("manualNumbers").value.trim(),nums=[...new Set(raw.split(/[,\s]+/).filter(Boolean).map(Number).filter(Number.isFinite))];
  if(!source){showNotice("manualNotice","먼저 문제팩 출처를 선택하세요.");return}const qs=state.questions.filter(q=>q.chapter===chapter&&sourceFor(q)===source&&nums.includes(Number(q.number)));if(!qs.length){showNotice("manualNotice","등록할 수 있는 문제 번호가 없습니다.");return}
- qs.forEach(q=>{const p=pFor(q.id);p.attempts++;p.wrong++;p.streak=0;p.manual=true;p.last=new Date().toISOString();state.progress[q.id]=p;state.attempts.push({questionId:q.id,servedId:q.id,chapter:q.chapter,source:sourceFor(q),type:q.type,concept:q.concept,correct:false,at:new Date().toISOString(),manual:true})});save();document.getElementById("manualNumbers").value="";renderRecords();renderDashboard();showNotice("manualNotice",`${qs.length}개 오답을 등록했습니다.`)
+  qs.forEach(q=>{const p=pFor(q.id);p.attempts++;p.wrong++;p.streak=0;p.manual=true;p.last=new Date().toISOString();state.progress[q.id]=p;state.attempts.push({questionId:q.id,servedId:q.id,chapter:q.chapter,source:sourceFor(q),type:q.type,concept:q.concept,correct:false,at:new Date().toISOString(),manual:true})});rebuildProgress();save();document.getElementById("manualNumbers").value="";renderRecords();renderDashboard();showNotice("manualNotice",`${qs.length}개 오답을 등록했습니다.`)
 });
 document.getElementById("printBtn").addEventListener("click",()=>window.print());
 document.querySelectorAll("[data-quick-action]").forEach(btn=>btn.addEventListener("click",()=>startQuickPractice(btn.dataset.quickAction,+btn.dataset.quickLimit)));
@@ -402,24 +594,25 @@ document.getElementById("exportBtn").addEventListener("click",()=>{
  const blob=new Blob(["\ufeff"+JSON.stringify(payload,null,2)],{type:"application/json;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=safeName(document.getElementById("backupName").value)+".json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);showNotice("backupNotice","JSON 백업 파일을 저장했습니다.")
 });
 async function readImport(){const f=document.getElementById("importFile").files[0];if(!f)throw new Error("먼저 JSON 파일을 선택하세요.");const text=(await f.text()).replace(/^\uFEFF/,""),obj=JSON.parse(text);if(obj.format!=="회계원리 학습센터 백업"||!obj.data)throw new Error("학습센터 백업 파일이 아닙니다.");return obj.data}
-document.getElementById("mergeBtn").addEventListener("click",async()=>{try{const incoming=await readImport();const qmap=new Map([...state.questions,...(incoming.questions||[])].map(q=>[q.id,q])),vmap=new Map([...state.variants,...(incoming.variants||[])].map(q=>[q.id,q]));state.questions=[...qmap.values()];state.variants=[...vmap.values()];const amap=new Map([...state.attempts,...(incoming.attempts||[])].map(a=>[[a.questionId,a.servedId,a.at,a.correct,a.manual].join("|"),a]));state.attempts=[...amap.values()];rebuildProgress();save();afterImport("기존 기록과 안전하게 합쳤습니다.")}catch(e){showNotice("backupNotice","복원 실패: "+e.message)}});
+document.getElementById("mergeBtn").addEventListener("click",async()=>{try{const incoming=await readImport(),excluded=new Set([...(state.excludedQuestionIds||[]),...(incoming.excludedQuestionIds||[])]),qmap=new Map([...state.questions,...(incoming.questions||[])].map(q=>[q.id,q])),vmap=new Map([...state.variants,...(incoming.variants||[])].map(q=>[q.id,q]));state.excludedQuestionIds=[...excluded];state.questions=[...qmap.values()].filter(q=>!excluded.has(q.id));state.variants=[...vmap.values()].filter(q=>!excluded.has(q.id));const amap=new Map([...state.attempts,...(incoming.attempts||[])].map(a=>[[a.questionId,a.servedId,a.at,a.correct,a.manual].join("|"),a]));state.attempts=[...amap.values()].filter(a=>!excluded.has(a.questionId)&&!excluded.has(a.servedId));mergeReviewGuideSettings(incoming.settings?.reviewGuide);rebuildProgress();save();afterImport("기존 기록과 안전하게 합쳤습니다.")}catch(e){showNotice("backupNotice","복원 실패: "+e.message)}});
 document.getElementById("replaceBtn").addEventListener("click",async()=>{try{const incoming=await readImport();if(!confirm("현재 브라우저 기록을 지우고 선택한 백업 상태로 완전히 교체할까요?"))return;state=normalizeState(incoming);save();afterImport("백업 당시 상태로 교체했습니다.")}catch(e){showNotice("backupNotice","복원 실패: "+e.message)}});
-function afterImport(msg){fillChapters();renderDashboard();renderRecords();showNotice("backupNotice",msg)}
+function afterImport(msg){fillChapters();renderDashboard();renderStudyPlan();renderRecords();showNotice("backupNotice",msg)}
 
 document.getElementById("packImportBtn").addEventListener("click",async()=>{
  try{
   const file=document.getElementById("packFile").files[0];if(!file)throw new Error("먼저 문제팩 JSON을 선택하세요.");
   const obj=JSON.parse((await file.text()).replace(/^\uFEFF/,""));if(obj.format!=="회계원리 학습센터 문제팩"||!Array.isArray(obj.questions))throw new Error("학습센터 문제팩 형식이 아닙니다.");
-  const packSource=String(obj.source||obj.packName||file.name.replace(/\.json$/i,"")||"가져온 문제팩").trim(),importedQuestions=obj.questions.map(q=>({...q,source:obj.source||obj.packName||q.source||packSource})),importedVariants=(obj.variants||[]).map(q=>({...q,source:obj.source||obj.packName||q.source||packSource})),incoming=[...importedQuestions,...importedVariants],ids=new Set([...state.questions,...importedQuestions].map(q=>q.id));
+   const packSource=String(obj.source||obj.packName||file.name.replace(/\.json$/i,"")||"가져온 문제팩").trim(),importedQuestions=obj.questions.map(q=>({...q,source:obj.source||obj.packName||q.source||packSource})),importedVariants=(obj.variants||[]).map(q=>({...q,source:obj.source||obj.packName||q.source||packSource})),incoming=[...importedQuestions,...importedVariants],ids=new Set([...state.questions,...importedQuestions].map(q=>q.id));
   incoming.forEach(q=>{if(!q.id||!q.chapter||!q.type||!q.concept||!q.q||!Array.isArray(q.o)||q.o.length!==4||!Number.isInteger(q.a)||q.a<0||q.a>3||!q.e||!validQuestionTable(q.table))throw new Error(`문제 ${q.id||"(ID 없음)"}의 형식이 올바르지 않습니다.`)});
   (obj.variants||[]).forEach(v=>{if(!v.parentId||!ids.has(v.parentId))throw new Error(`변형문제 ${v.id}의 원본 문제를 찾을 수 없습니다.`)});
-  state.questions=[...new Map([...state.questions,...importedQuestions].map(q=>[q.id,q])).values()];
-  state.variants=[...new Map([...state.variants,...importedVariants].map(q=>[q.id,q])).values()];save();fillChapters();renderDashboard();
-  showNotice("packNotice",`${obj.chapter||"새 단원"} · ${packSource} 문제팩을 추가했습니다: 기본 ${importedQuestions.length}문항, 변형 ${importedVariants.length}문항`)
+   const excluded=new Set(state.excludedQuestionIds||[]),addedQuestions=importedQuestions.filter(q=>!excluded.has(q.id)),addedVariants=importedVariants.filter(q=>!excluded.has(q.id));
+   state.questions=[...new Map([...state.questions,...addedQuestions].map(q=>[q.id,q])).values()];
+   state.variants=[...new Map([...state.variants,...addedVariants].map(q=>[q.id,q])).values()];save();fillChapters();renderDashboard();
+   showNotice("packNotice",`${obj.chapter||"새 단원"} · ${packSource} 문제팩을 추가했습니다: 기본 ${addedQuestions.length}문항, 변형 ${addedVariants.length}문항`)
  }catch(e){showNotice("packNotice","문제팩 추가 실패: "+e.message)}
 });
 
-fillChapters();renderDashboard();renderRecords();
+fillChapters();renderDashboard();renderStudyPlan();renderRecords();
 </script>
 </body>
 </html>
